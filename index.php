@@ -1,10 +1,10 @@
 <?php
 
 
-$filename = 'php/config-sample.php';
+$filename = 'php/config.php';
 
-if (file_exists($filename)) {
-    echo "The file $filename exists - rename to php/config.php and add MySql DB and API info.";
+if (!file_exists($filename)) {
+    echo "The file $filename doesn't exists - rename php/sample-config.php to php/config.php and add MySql DB and API info.";
 
     die();
 } 
