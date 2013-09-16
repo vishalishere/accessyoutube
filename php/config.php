@@ -16,6 +16,4 @@ $using_mysql = 'yes';
   $db_password = 'xxxxx';  
   $db_database = 'xxxxx';  
 
-$error_reporting = 'on';
-
 ?>
