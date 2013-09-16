@@ -8,7 +8,7 @@
 Built on a custom PHP framework adapted from HTML5 Boilerplate to ensure cross-browser compatibility
 
 
-Freel free to use however you like
+Feel free to use however you like
 
 [@mikethrussell](https://twitter.com/mikethrussell)
 
@@ -21,3 +21,4 @@ Freel free to use however you like
 
 
 
+testing 123
