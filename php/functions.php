@@ -96,7 +96,7 @@ function relatedyt($v,$s)  {
 
  // generate feed URL
 $feedURL = 
-"http://gdata.youtube.com/feeds/api/videos/{$v}/related?v=2&max-results=1&format=5&restriction=GB&safesearch=strict&key=AI39si6eDBQPUdjOUTYpOaHUUSyBUCBK0zjHEtNFxtzvuhbQ0EfZfFjeP-U16vgDWMSGWrjLGjVNBxzfhqSnGL1D1onGmgOsJQ";
+"http://gdata.youtube.com/feeds/api/videos/{$v}/related?v=2&max-results=1&format=5&restriction=GB&safesearch=strict&key=".$api;
 
 // read feed into SimpleXML object
 
@@ -158,7 +158,7 @@ if( empty($sxml))
  function getimg($v) {
 
 $feedURL = 
-"http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=1&format=5&orderby=relevance&restriction=GB&safesearch=strict&key=AI39si6eDBQPUdjOUTYpOaHUUSyBUCBK0zjHEtNFxtzvuhbQ0EfZfFjeP-U16vgDWMSGWrjLGjVNBxzfhqSnGL1D1onGmgOsJQ";
+"http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=1&format=5&orderby=relevance&restriction=GB&safesearch=strict&key=".$api;
   
 // read feed into SimpleXML object
 			
