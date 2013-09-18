@@ -27,6 +27,8 @@ $id = preg_replace("/[^A-Za-z0-9]/", "", $id);
 	onMouseout=\"changeClass1$id()\" ";
 }
 
+
+//video search results
 function getyt($v) {
 
 
@@ -91,7 +93,7 @@ echo	"href=\"{$watch}\">
 
   }
 
-
+//for next video button on play page
 function relatedyt($v,$s)  {
 
  // generate feed URL
@@ -148,13 +150,13 @@ if( empty($sxml))
       </div>
     </li>
   </div>"; 
-        
-
 				 
       }
       
       }
 
+
+//used to get related images for 'most popular' links
  function getimg($v) {
 
 $feedURL = 
