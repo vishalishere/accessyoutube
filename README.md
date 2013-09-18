@@ -18,3 +18,11 @@ Feel free to use however you like
 * Create MySql DB and import accessyoutube.sql for rude word filtering and search requests tracking
 * Rename php/config-sample.php -> php/config.php
 * Add links to MySql database, YouTube API and Google Analytics code in php/config.php
+
+
+Development roadmap include:
+
+* Favourites
+* Channels
+* Upload capability
+* Non-flash video player
