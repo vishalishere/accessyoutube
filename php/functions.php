@@ -30,7 +30,9 @@ $id = preg_replace("/[^A-Za-z0-9]/", "", $id);
 function getyt($v) {
 
 
-//add your own youtube api
+//string explained: 
+  //format=5 stops video results returning that aren't allow to be played embedded on another website
+  //Country restriction is to stop youtube returning video that aren't allowed to be played due to geographic restrictions
 $feedURL = 
 "http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=12&format=5&orderby=relevance&restriction=GB&safesearch=strict&key=".$api;
   
