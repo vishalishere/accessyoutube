@@ -20,7 +20,7 @@ Feel free to use however you like
 * Add links to MySql database, YouTube API and Google Analytics code in php/config.php
 
 
-Development roadmap include:
+Development roadmap includes:
 
 * Favourites
 * Channels
