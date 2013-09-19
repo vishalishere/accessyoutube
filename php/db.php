@@ -76,7 +76,11 @@ $v = str_replace(' ', '+', $v);
 
 
 
-header("Location: $v"); }
+header("Location: $foldername$v"); 
+
+
+
+}
 
 
 
