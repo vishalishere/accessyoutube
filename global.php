@@ -33,8 +33,8 @@ $path = explode('/',$urlParse ['path']);
 
 
 if ($path[1] != ''){$inFolder == 'true'; $foldername = '/'.$path[1].'/'; }
-else {$inFolder == 'false'; $foldername = '/';}
-
+elseif {$inFolder == 'false'; $foldername = '/';}
+else {$path[1] == 'php'; $foldername = '/';}
 
 # Prevent XSS and SQL Injection
 if(strpos($_SERVER['HTTP_HOST'],$_SERVER['SERVER_NAME'])===false){
@@ -53,7 +53,5 @@ if ($using_mysql == 'yes'){
 	
 require_once ($root.'php/functions.php');
 
-
-    
         
 ?>
