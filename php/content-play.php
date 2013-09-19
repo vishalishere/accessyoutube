@@ -59,7 +59,7 @@ $ip =&getIP();
 <div id="controlheader">		
     
   <fieldset class="search"> 
-      <form method="post" name="search" action="../php/db.php">
+      <form method="post" name="search" action="<?php echo $foldername;?>php/db.php">
       <?php focusjs('search','search')?>
         <input <?php focus(search)?>  autocomplete="off" type="text" title="type here" id="<?php echo $big;?>search" class="<?php echo $big;?>search" label="type here" name="v" placeholder="type here..." />
         <input type="hidden" name="db" value="submit">

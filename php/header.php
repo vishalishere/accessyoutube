@@ -4,7 +4,7 @@
 
 
 
-<h1 id="title">ACCESS: <img id="yt-title" src="img/YouTube.png"></h1>
+<h1 id="title">ACCESS: <img id="yt-title" src="<?php echo $foldername;?>img/YouTube.png"></h1>
           <hr>
           
           		</div>

@@ -25,14 +25,17 @@ $folder = '';
 }
 
 
+// better folder detection
 $url = $_SERVER['REQUEST_URI'];
 $urlParse = parse_url($url);
 
 $path = explode('/',$urlParse ['path']);
-$inFolder = $path[1]; //gives project_name in your case
+//echo $path[1]; //gives folder name
+
+if ($path[1] != ''){$inFolder == 'true'; $foldername = '/'.$path[1].'/'; }
+else {$inFolder == 'false'; $foldername = '/';}
 
 
-if ($inFolder != ''){echo 'In Folder';}
 
 # Prevent XSS and SQL Injection
 if(strpos($_SERVER['HTTP_HOST'],$_SERVER['SERVER_NAME'])===false){

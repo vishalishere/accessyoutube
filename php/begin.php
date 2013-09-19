@@ -25,7 +25,7 @@
   <meta name="viewport" content="width=device-width">
 
 
-  <link rel="stylesheet" href="/css/css.php">
+  <link rel="stylesheet" href="<?php echo $foldername;?>css/css.php">
   
   
   <!-- Load up some favicons -->
@@ -43,7 +43,7 @@
 
   <!-- <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+("devicePixelRatio" in window ? ","+devicePixelRatio : ",1")+'; path=/';</script> -->
   
-  <script src="/js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+  <script src="<?php echo $foldername;?>js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
 
 
 

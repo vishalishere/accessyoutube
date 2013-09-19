@@ -16,7 +16,7 @@ if (!isset($_GET['v'])|| empty($_GET['v'])) { $big = 'big';}
  
 
   <fieldset class="<?php echo $big;?>search"> 
-      <form method="post" name="search" action="php/db.php">
+      <form method="post" name="search" action="<?php echo $foldername;?>php/db.php">
       <?php focusjs($big.'search',$big.'search')?>
         <input <?php focus($big.search)?> autocomplete="off" type="text" title="type here" id="<?php echo $big;?>search" class="<?php echo $big;?>search" name="v" placeholder="type here..." />
         <?php focusjs($big.'btn',$big.'btn')?>
