@@ -56,7 +56,7 @@ if (preg_match("/\b$bad\b/i", $v)) {$clean='no';}
 
 
 
-if ($clean=='no'){header("Location: $foldername");} 
+if ($clean=='no'){header("Location: $folder");} 
 
 
 
@@ -76,7 +76,7 @@ $v = str_replace(' ', '+', $v);
 
 
 
-header("Location: $foldername$v"); 
+header("Location: $folder$v"); 
 
 
 
@@ -94,7 +94,7 @@ header("Location: $foldername$v");
 
 else  {
 
-header("Location: $foldername");
+header("Location: $folder");
 
 }
 
