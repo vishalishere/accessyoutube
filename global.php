@@ -36,9 +36,6 @@ if ($path[1] != ''){$inFolder == 'true'; $foldername = '/'.$path[1].'/'; }
 else {$inFolder == 'false'; $foldername = '/';}
 
 
-echo $foldername;
-
-
 # Prevent XSS and SQL Injection
 if(strpos($_SERVER['HTTP_HOST'],$_SERVER['SERVER_NAME'])===false){
     header('Content-Type:text/plain');
