@@ -25,7 +25,7 @@
   <meta name="viewport" content="width=device-width">
 
 
-  <link rel="stylesheet" href="<?php echo $foldername;?>css/css.php">
+  <link rel="stylesheet" href="<?php echo $folder;?>css/css.php">
   
   
   <!-- Load up some favicons -->

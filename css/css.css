@@ -24,7 +24,7 @@ a {font-size:16px; padding-top:3px;}
 #page-container { 
 	margin:0 auto; /* center, not in IE5 */
 max-width: 1140px;
- background: #dde url(/img/center-highlight-opacity.png) no-repeat center -400px fixed;
+ background: #dde url(<?php echo $folder;?>img/center-highlight-opacity.png) no-repeat center -400px fixed;
  border:1px #ccc solid; 
 }
 
@@ -196,8 +196,8 @@ position:relative;
 	zoom:1;
 	*display: inline;
 
-background: url('/img/shadow-120.png') no-repeat center bottom ;
-*background: url('/img/shadow-120.png') no-repeat 4px 100px;
+background: url('<?php echo $folder;?>img/shadow-120.png') no-repeat center bottom ;
+*background: url('<?php echo $folder;?>img/shadow-120.png') no-repeat 4px 100px;
  }
  
 
@@ -217,7 +217,7 @@ background: #FFFFcc; width: 230px; height: 210px; overflow:hidden; }
 	height:100%;
 
 
-background: url('/img/shadow-230.png') no-repeat center bottom ;
+background: url('<?php echo $folder;?>img/shadow-230.png') no-repeat center bottom ;
  }
 
 
@@ -233,7 +233,7 @@ background: #FFFFcc; width: 110px; height: 70px; overflow:hidden; }
 	*display: inline;
 	vertical-align:text-top;
 	height:100%;
-background: url('/img/shadow-90.png') no-repeat center bottom ;
+background: url('<?php echo $folder;?>img/shadow-90.png') no-repeat center bottom ;
  }
 
 
