@@ -25,7 +25,11 @@ $folder = '';
 }
 
 
-echo $folder;
+$url = $_SERVER['REQUEST_URI'];
+$urlParse = parse_url($url);
+
+$path = explode('/',$urlParse ['path']);
+echo 'folder is '.$path[1]; //gives project_name in your case
 
 # Prevent XSS and SQL Injection
 if(strpos($_SERVER['HTTP_HOST'],$_SERVER['SERVER_NAME'])===false){
