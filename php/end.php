@@ -9,8 +9,8 @@
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via build script -->
-  <script src="/js/plugins.js"></script>
-  <script src="/js/script.js"></script>
+  <script src="<?php echo $foldername;?>js/plugins.js"></script>
+  <script src="<?php echo $foldername;?>js/script.js"></script>
   <!-- end scripts -->
 
   <script>
