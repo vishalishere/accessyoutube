@@ -33,8 +33,8 @@ $path = explode('/',$urlParse ['path']);
 
 
 if ($path[1] != ''){$inFolder == 'true'; $foldername = '/'.$path[1].'/'; }
-elseif {$inFolder == 'false'; $foldername = '/';}
-else {$path[1] == 'php'; $foldername = '/';}
+elseif ($path[1] == 'php') {$foldername = '/';}
+else {$inFolder == 'false'; $foldername = '/';}
 
 # Prevent XSS and SQL Injection
 if(strpos($_SERVER['HTTP_HOST'],$_SERVER['SERVER_NAME'])===false){
