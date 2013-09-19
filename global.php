@@ -30,11 +30,13 @@ $url = $_SERVER['REQUEST_URI'];
 $urlParse = parse_url($url);
 
 $path = explode('/',$urlParse ['path']);
-//echo $path[1]; //gives folder name
+
 
 if ($path[1] != ''){$inFolder == 'true'; $foldername = '/'.$path[1].'/'; }
 else {$inFolder == 'false'; $foldername = '/';}
 
+
+echo $foldername;
 
 
 # Prevent XSS and SQL Injection
