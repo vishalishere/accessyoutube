@@ -24,6 +24,9 @@ else {
 $folder = '';
 }
 
+
+echo $folder;
+
 # Prevent XSS and SQL Injection
 if(strpos($_SERVER['HTTP_HOST'],$_SERVER['SERVER_NAME'])===false){
     header('Content-Type:text/plain');
