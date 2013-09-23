@@ -32,6 +32,9 @@ $id = preg_replace("/[^A-Za-z0-9]/", "", $id);
 function getyt($v) {
 
 
+global $api;
+
+global $country_code;
 //string explained: 
   //format=5 stops video results returning that aren't allow to be played embedded on another website
   //Country restriction is to stop youtube returning video that aren't allowed to be played due to geographic restrictions
@@ -96,6 +99,10 @@ echo	"href=\"{$watch}\">
 //for next video button on play page
 function relatedyt($v,$s)  {
 
+global $api;
+
+global $country_code;
+
  // generate feed URL
 $feedURL = 
 "http://gdata.youtube.com/feeds/api/videos/{$v}/related?v=2&max-results=1&format=5&restriction=".$country_code."&safesearch=strict&key=".$api;
@@ -158,6 +165,10 @@ if( empty($sxml))
 
 //used to get related images for 'most popular' links
  function getimg($v) {
+
+global $api;
+
+global $country_code;
 
 $feedURL = 
 "http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=1&format=5&orderby=relevance&restriction=".$country_code."&safesearch=strict&key=".$api;
