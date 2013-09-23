@@ -36,7 +36,7 @@ function getyt($v) {
   //format=5 stops video results returning that aren't allow to be played embedded on another website
   //Country restriction is to stop youtube returning video that aren't allowed to be played due to geographic restrictions
 $feedURL = 
-"http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=12&format=5&orderby=relevance&restriction=GB&safesearch=strict&key=".$api;
+"http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=12&format=5&orderby=relevance&restriction=".$country_code."&safesearch=strict&key=".$api;
   
 // read feed into SimpleXML object
 			
@@ -98,7 +98,7 @@ function relatedyt($v,$s)  {
 
  // generate feed URL
 $feedURL = 
-"http://gdata.youtube.com/feeds/api/videos/{$v}/related?v=2&max-results=1&format=5&restriction=GB&safesearch=strict&key=".$api;
+"http://gdata.youtube.com/feeds/api/videos/{$v}/related?v=2&max-results=1&format=5&restriction=".$country_code."&safesearch=strict&key=".$api;
 
 // read feed into SimpleXML object
 
@@ -160,7 +160,7 @@ if( empty($sxml))
  function getimg($v) {
 
 $feedURL = 
-"http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=1&format=5&orderby=relevance&restriction=GB&safesearch=strict&key=".$api;
+"http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=1&format=5&orderby=relevance&restriction=".$country_code."&safesearch=strict&key=".$api;
   
 // read feed into SimpleXML object
 			

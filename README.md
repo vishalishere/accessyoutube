@@ -15,9 +15,16 @@ Feel free to use however you like
 ##### Instructions:
 
 * Requires Apache, PHP and MySql
-* Create MySql DB and import accessyoutube.sql for rude word filtering and search requests tracking
-* Rename php/config-sample.php -> php/config.php
-* Add links to MySql database, YouTube API and Google Analytics code in php/config.php
+
+* Download [source-code](https://github.com/mikethrussell/accessyoutube)
+
+* Get your YouTube API from [here](https://developers.google.com/youtube/registering_an_application) 
+
+* Create your database. Import accessyoutube.sql
+
+* Rename php/config-sample.php to config.php
+
+* Edit php/config.php (including the YouTube api and database connection info)
 
 
 Development roadmap includes:

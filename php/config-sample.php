@@ -6,7 +6,10 @@ $google_analytics = 'xxxxx';
 $email = 'xxxx';
 
 //get YouTube api from here: https://developers.google.com/youtube/registering_an_application
-$api = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+$api = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+
+//enter 2 char coutry code (GB, NL etc) - needed for filtering out geolocation blocked results
+$country_code = 'GB';
 
 
 $using_mysql = 'yes';
