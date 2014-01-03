@@ -9,7 +9,7 @@ $email = 'xxxx';
 $api = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
 //enter 2 char coutry code (GB, NL etc) - needed for filtering out geolocation blocked results
-$country_code = 'GB';
+ $country_code = 'GB';
 
 
 $using_mysql = 'yes';
@@ -17,6 +17,8 @@ $using_mysql = 'yes';
   $db_host = 'localhost';  
   $db_user = 'xxxxx';  
   $db_password = 'xxxxx';  
-  $db_database = 'xxxxx';  
+  $db_database = 'xxxxx'; 
+
+  $in_root = 'yes'; 
 
 ?>

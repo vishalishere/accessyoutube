@@ -1,5 +1,7 @@
 <?php 
 
+
+
 //global file used for includes and file location references
 //needs some work...
 
@@ -23,6 +25,8 @@ $folder = '/'.$folder.'/';
 else {
 $folder = '';
 }
+
+if (in_root=='yes'){$folder='';}
 
 
 // better folder detection
@@ -52,5 +56,7 @@ if ($using_mysql == 'yes'){
 	
 require_once ($root.'php/functions.php');
 
-        
+
+global $country_code;
+global $api;        
 ?>
