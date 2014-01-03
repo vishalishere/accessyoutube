@@ -58,7 +58,5 @@ if ($using_mysql == 'yes'){
 	
 require_once ($root.'php/functions.php');
 
-
-global $country_code;
-global $api;        
+   
 ?>
