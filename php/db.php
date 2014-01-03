@@ -6,7 +6,7 @@
 
 require_once ('../global.php');
 
-
+if ($in_root=='yes'){$folder='';}
 
 //dump searchterm to DB if searched for 
 
