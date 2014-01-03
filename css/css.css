@@ -202,6 +202,8 @@ background: url('<?php echo $folder;?>img/shadow-120.png') no-repeat center bott
  
 
 ul.vidresults img {width:200px; height:150px; padding:10px 0px 5px 0px;}
+ul.frontvids  {padding-top:40px!important; padding-bottom: 0px !important;}
+ul.frontvids img {width:200px; height:150px; padding:10px 0px 5px 0px;}
 .vidlink { border:#ff9933 solid 5px; margin:0 20px; background: white;  width: 230px; height: 210px; overflow:hidden; } 
 .vidlinkfocus { border:#ff9933 solid 5px; outline:#333399 solid 10px; margin:0 20px; 
 background: #FFFFcc; width: 230px; height: 210px; overflow:hidden; } 

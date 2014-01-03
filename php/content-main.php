@@ -23,9 +23,41 @@ if (!isset($_GET['v'])|| empty($_GET['v'])) { $big = 'big';}
         <input <?php focus($big.btn)?> type="submit" id="<?php echo $big;?>btn" class="<?php echo $big;?>btn" value="search" />  
       </form>
   </fieldset>
-    
-<?php 
 
+  <?php if ($big=='big') {
+
+?>
+
+
+  <ul class="frontvids">
+  <h2>Watch our new Henshaws videos!</h2>
+<div class="shadow"><li><div id="dCSI1kDtO3w" class="vidlink">
+<script>function changeClassdCSI1kDtO3w(){document.getElementById("dCSI1kDtO3w").setAttribute("class", "vidlinkfocus");}function changeClass1dCSI1kDtO3w(){document.getElementById("dCSI1kDtO3w").setAttribute("class", "vidlink");}</script><a 
+  
+  onFocus="changeClassdCSI1kDtO3w()" 
+  onBlur="changeClass1dCSI1kDtO3w()"
+  onMouseover="changeClassdCSI1kDtO3w()" 
+  onMouseout="changeClass1dCSI1kDtO3w()" href="play?v=dCSI1kDtO3w&s=">
+        <img src="http://i.ytimg.com/vi/dCSI1kDtO3w/0.jpg" alt="A short film about Henshaws College"/><br>A short film about Henshaws College</a>
+</div></li></div>
+
+  <div class="shadow"><li><div id="nmJG8I4FIA" class="vidlink">
+<script>function changeClassnmJG8I4FIA(){document.getElementById("nmJG8I4FIA").setAttribute("class", "vidlinkfocus");}function changeClass1nmJG8I4FIA(){document.getElementById("nmJG8I4FIA").setAttribute("class", "vidlink");}</script><a 
+  
+  onFocus="changeClassnmJG8I4FIA()" 
+  onBlur="changeClass1nmJG8I4FIA()"
+  onMouseover="changeClassnmJG8I4FIA()" 
+  onMouseout="changeClass1nmJG8I4FIA()" href="play?v=-nmJG8I4FIA&s=">
+        <img src="http://i.ytimg.com/vi/-nmJG8I4FIA/0.jpg" alt="Henshaws Stories: A short film about charity Henshaws Society for Blind People"/><br>A short film about Henshaws Society for Blind People</a>
+</div></li></div>
+
+
+</ul>
+
+
+
+<?php
+    }
 
 //if front page (we use the $big variable from ealier as our indicator)
 if ($big == 'big') {
