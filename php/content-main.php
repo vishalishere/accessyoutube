@@ -26,6 +26,8 @@ if (!isset($_GET['v'])|| empty($_GET['v'])) { $big = 'big';}
 
   <?php if ($big=='big') {
 
+    echo $folder;
+
 ?>
 
 
