@@ -50,7 +50,7 @@ if(strpos($_SERVER['HTTP_HOST'],$_SERVER['SERVER_NAME'])===false){
 require_once ($root.'php/config.php');
 
 
-if ($in_root=='yes'){$folder='';}
+if ($in_root=='yes'){$folder='/';}
 
 if ($using_mysql == 'yes'){
 	require_once ($root.'php/connect.php');
