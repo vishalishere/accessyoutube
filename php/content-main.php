@@ -29,7 +29,7 @@ if (!isset($_GET['v'])|| empty($_GET['v'])) { $big = 'big';}
 ?>
 
 
-  <ul class="frontvids">
+<!--   <ul class="frontvids">
   <h2>Watch our new Henshaws videos!</h2>
 <div class="shadow"><li><div id="dCSI1kDtO3w" class="vidlink">
 <script>function changeClassdCSI1kDtO3w(){document.getElementById("dCSI1kDtO3w").setAttribute("class", "vidlinkfocus");}function changeClass1dCSI1kDtO3w(){document.getElementById("dCSI1kDtO3w").setAttribute("class", "vidlink");}</script><a 
@@ -52,7 +52,7 @@ if (!isset($_GET['v'])|| empty($_GET['v'])) { $big = 'big';}
 </div></li></div>
 
 
-</ul>
+</ul> -->
 
 
 
