@@ -29,12 +29,8 @@
   
   
   <!-- Load up some favicons -->
-  <link rel="shortcut icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon-precomposed.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon-57x57-precomposed.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon-72x72-precomposed.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon-114x114-precomposed.png">
+  <link rel="icon" href="/favicon.ico?nocache" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico?nocache" type="image/x-icon" />
   
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
   
