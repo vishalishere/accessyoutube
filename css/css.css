@@ -17,9 +17,11 @@ html,body {
 a {font-size:16px; padding-top:3px;}
 
                                    
-#cc {position: relative; top: 5px;}
+#cc {position: relative; top: 6px;}
 #mt {position: relative; top: 8px; padding: 0 20px;}
-#jisc {position: relative; top: 12px; padding: 0px 20px 0px 5px;;}
+#jisc {position: relative; top: 3px;}
+#contact img {position: relative; top: -10px;}
+#contact {position: relative; top: 15px;}
 
 #page-container { 
 	margin:0 auto; /* center, not in IE5 */
