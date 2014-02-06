@@ -239,3 +239,4 @@ background: url('<?php echo $folder;?>img/shadow-90.png') no-repeat center botto
  }
 
 
+#header_img {width: 400px; margin: auto; padding:20px;}
