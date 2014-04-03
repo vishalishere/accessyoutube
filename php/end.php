@@ -16,7 +16,7 @@
   <script>
     var _gaq=[['_setAccount','<?php echo $google_analytics; ?>'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 </body>
