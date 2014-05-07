@@ -15,7 +15,7 @@
 
 <a <?php focus('college')  ;?>
 href="http://henshaws.org.uk/what-we-offer/college/ ">
-        <img src="<?php echo $folder;?>/img/college.jpg" alt="College"/><br>Specialist College</a>
+        <img src="<?php echo $folder;?>img/college.jpg" alt="College"/><br>Specialist College</a>
         </div></li></div>
 
 
@@ -24,7 +24,7 @@ href="http://henshaws.org.uk/what-we-offer/college/ ">
 
 <a <?php focus('housing')  ;?>
 href="http://henshaws.org.uk/what-we-offer/housing-and-support/ ">
-        <img src="<?php echo $folder;?>/img/H&S.jpg" alt="Housing and Support"/><br>Housing and Support</a>
+        <img src="<?php echo $folder;?>img/H&S.jpg" alt="Housing and Support"/><br>Housing and Support</a>
         </div></li></div>
 
 
@@ -33,7 +33,7 @@ href="http://henshaws.org.uk/what-we-offer/housing-and-support/ ">
 
 <a <?php focus('ACC')  ;?>
 href="http://henshaws.org.uk/what-we-offer/arts-and-crafts-centre/  ">
-        <img src="<?php echo $folder;?>/img/ACC.jpg" alt="Arts & Crafts Centre"/><br>Arts & Crafts Centre</a>
+        <img src="<?php echo $folder;?>img/ACC.jpg" alt="Arts & Crafts Centre"/><br>Arts & Crafts Centre</a>
         </div></li></div>
 
 
@@ -42,7 +42,7 @@ href="http://henshaws.org.uk/what-we-offer/arts-and-crafts-centre/  ">
 
 <a <?php focus('community')  ;?>
 href="http://henshaws.org.uk/what-we-offer/courses-and-training/  ">
-        <img src="<?php echo $folder;?>/img/community.jpg" alt="Community Services"/><br>Community Services</a>
+        <img src="<?php echo $folder;?>img/community.jpg" alt="Community Services"/><br>Community Services</a>
         </div></li></div>
 </ul>
 
