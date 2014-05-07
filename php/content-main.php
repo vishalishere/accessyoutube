@@ -18,13 +18,17 @@ if (!isset($_GET['v'])|| empty($_GET['v'])) { $big = 'big';}
   <fieldset class="<?php echo $big;?>search"> 
       <form method="post" name="search" action="<?php echo $folder;?>php/db.php">
       <?php focusjs($big.'search',$big.'search')?>
-        <input <?php focus($big.search)?> autocomplete="off" type="text" title="type here" id="<?php echo $big;?>search" class="<?php echo $big;?>search" name="v" placeholder="type here..." />
+        <input <?php focus($big.'search')?> autocomplete="off" type="text" title="type here" id="<?php echo $big;?>search" class="<?php echo $big;?>search" name="v" placeholder="type here..." />
         <?php focusjs($big.'btn',$big.'btn')?>
-        <input <?php focus($big.btn)?> type="submit" id="<?php echo $big;?>btn" class="<?php echo $big;?>btn" value="search" />  
+        <input <?php focus($big.'btn')?> type="submit" id="<?php echo $big;?>btn" class="<?php echo $big;?>btn" value="search" />  
       </form>
   </fieldset>
 
   <?php if ($big=='big') {
+
+@include ($root.'php/marketing.php');
+
+
 
 ?>
 

@@ -3,8 +3,10 @@
 <div id="footer-container">
 <hr>
 		<div class="wrapper">
-		<span id="accesstech"><a href="http://accesstechnology.org.uk"><img src="http://accesstechnology.org.uk/img/footer.png" alt="access technology - suite of accessible web applications"</a></span>
-	   <a href="http://www.henshaws.org.uk/college" target="_blank" tabindex="-1"><img src="http://accesstechnology.org.uk/images/img/HenshawsCollege.png" alt="Henshaws College" height="80px"></a>  
+		<span id="accesstech">
+			<a href="http://accesstechnology.org.uk">
+				<img src="http://accesstechnology.org.uk/img/footer.png" alt="access technology - suite of accessible web applications"></a></span>
+	   <!-- <a href="http://www.henshaws.org.uk/college" target="_blank" tabindex="-1"><img src="http://accesstechnology.org.uk/images/img/HenshawsCollege.png" alt="Henshaws College" height="80px"></a>   -->
       <span id="jisc"><img src="http://accesstechnology.org.uk/img/jisc.png" alt="JISC Advance" height="50px"></span>
       <img id="cc" alt="Creative Commons License" style="border-width:0" src="http://accesstechnology.org.uk/img/cc.png" />
 

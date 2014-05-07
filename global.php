@@ -27,7 +27,6 @@ $folder = '';
 }
 
 
-
 // better folder detection
 $url = $_SERVER['REQUEST_URI'];
 $urlParse = parse_url($url);
@@ -51,6 +50,7 @@ require_once ($root.'php/config.php');
 
 
 if ($in_root=='yes'){$folder='/';}
+
 
 if ($using_mysql == 'yes'){
 	require_once ($root.'php/connect.php');

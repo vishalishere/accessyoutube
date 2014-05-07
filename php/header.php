@@ -7,6 +7,8 @@
 <!-- <h1 id="title">ACCESS: <img id="yt-title" src="<?php echo $folder;?>img/YouTube.png"></h1> -->
 
 <div id="header_img"><img src="<?php echo $folder;?>img/header.png" alt="access youtube"></div>
+<div id="header_logo"><img src="<?php echo $folder;?>img/main_logo.png" alt="access youtube"></div>
+
           <hr>
           
           		</div>
