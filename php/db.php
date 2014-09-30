@@ -32,15 +32,17 @@ $v= ltrim ($v,' ');  $v= rtrim ($v,' ');
 
 
 
-$query="SELECT * FROM bad_words";
+// $query="SELECT * FROM bad_words";
 
-$result = mysql_query($query) or die (mysql_error());
-
-
-
-while ($row = mysql_fetch_assoc($result)) {
+// $result = mysql_query($query) or die (mysql_error());
 
 
+
+// while ($row = mysql_fetch_assoc($result)) {
+
+$stmt = $pdo->prepare('SELECT * FROM bad_words');
+
+foreach ($stmt as $row) {
 
 $bad = $row['word'];
 
