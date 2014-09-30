@@ -30,7 +30,8 @@ while (strpos($v,'  ') !== false) {$v = str_replace('  ', ' ', $v);}
 
 $v= ltrim ($v,' ');  $v= rtrim ($v,' ');
 
-
+//allow spec chars in string
+$v = addslashes($v);
 
 $query="SELECT * FROM bad_words";
 
@@ -46,7 +47,7 @@ $bad = $row['word'];
 
 
 
-// if (preg_match("/\b$bad\b/i", $v)) {$clean='no';}
+if (preg_match("/\b$bad\b/i", $v)) {$clean='no';}
 
 
 
