@@ -26,7 +26,7 @@ if (!isset($_GET['v'])|| empty($_GET['v'])) { $big = 'big';}
 
   <?php if ($big=='big') {
 
-@include ($root.'php/marketing.php');
+// @include ($root.'php/marketing.php');
 
 
 
