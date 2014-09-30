@@ -75,7 +75,8 @@ mysql_query($query) or die ('Error updating database: ' . mysql_error());
 
 $v = str_replace(' ', '+', $v);
 
-
+//remove slashes
+$v  = stripslashes ($v);
 
 header("Location: $folder$v"); 
 
