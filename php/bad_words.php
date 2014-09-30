@@ -1,5 +1,4 @@
 <?php
-
 //check for naughty words via direct url
 
 
@@ -21,9 +20,10 @@ if (preg_match("/\b$bad\b/i", $v)) {header("Location: $folder");}
 
 
 
-
-
-
-
+}
 
 ?>
+
+
+
+
