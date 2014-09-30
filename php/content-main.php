@@ -120,6 +120,12 @@ $v = $_GET['v'];
 $v = preg_replace('/\s\s+/', ' ', $v);
 $v = urlencode($v); 
 
+
+@include ($root.'php/bad_words.php');
+
+
+
+
 echo '<ul class="vidresults">';
 getyt($v);
 echo '</ul>';
