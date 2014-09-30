@@ -46,7 +46,7 @@ $bad = $row['word'];
 
 
 
-if (preg_match("/\b$bad\b/i", $v)) {$clean='no';}
+// if (preg_match("/\b$bad\b/i", $v)) {$clean='no';}
 
 
 
