@@ -145,6 +145,16 @@ if ($ip=="195.194.187.26") {
   
 </ul>
 
+<?php
+$xmlInfoVideo    = simplexml_load_file("http://gdata.youtube.com/feeds/api/videos/".$v."?v=2&fields=title");
+
+foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string) $title); }
+
+echo $videoTitle;
+
+?>
+
+
  </div>
 
 
