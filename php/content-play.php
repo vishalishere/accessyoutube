@@ -1,15 +1,16 @@
 <?php
 //Detect special conditions devices
-$iPod    = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
-$iPhone  = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-$iPad    = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
-$Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android");
-$webOS   = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
 
-//do something with this information
-if( $iPod || $iPhone || $ipad){
-    echo 'ios device detected!';
-}
+    if (stripos($_SERVER['HTTP_USER_AGENT'],"iPhone")  !== false) {
+        $ios = true;
+    } elseif (stripos($_SERVER['HTTP_USER_AGENT'],"iPad") !== false) {
+        $ios = true;
+    } elseif (stripos($_SERVER['HTTP_USER_AGENT'],"iPod") !== false) {
+        $ios = true;
+    }
+ 
+
+if ($ios == true) {echo 'ios!';}
 
 //separate content page for the play module - as defined in play/index.php
 
