@@ -1,3 +1,35 @@
+<script>
+    $(function(){
+
+        var yt_int, yt_players={},
+            initYT = function() {
+                $(".ytplayer").each(function() {
+                    yt_players[this.id] = new YT.Player(this.id);
+                });
+            };
+
+        $.getScript("//www.youtube.com/player_api", function() {
+            yt_int = setInterval(function(){
+                if(typeof YT === "object"){
+                    initYT();
+                    clearInterval(yt_int);
+                }
+            },500);
+        });
+
+        $('#play').on('click', function(){
+          yt_players['player1'].playVideo();
+        });
+
+        $('#pause').on('click', function(){
+          yt_players['player1'].pauseVideo();
+        });
+
+        
+
+      });
+    </script>
+
 <?php
 
 //separate content page for the play module - as defined in play/index.php
@@ -198,36 +230,6 @@ if ($ip=="195.194.187.26") {
   <button id="play">Click to Play Video</button>
   <button id="pause">Click to Pause Video</button>
   
-    <script>
-    $(function(){
-
-        var yt_int, yt_players={},
-            initYT = function() {
-                $(".ytplayer").each(function() {
-                    yt_players[this.id] = new YT.Player(this.id);
-                });
-            };
-
-        $.getScript("//www.youtube.com/player_api", function() {
-            yt_int = setInterval(function(){
-                if(typeof YT === "object"){
-                    initYT();
-                    clearInterval(yt_int);
-                }
-            },500);
-        });
-
-        $('#play').on('click', function(){
-          yt_players['player1'].playVideo();
-        });
-
-        $('#pause').on('click', function(){
-          yt_players['player1'].pauseVideo();
-        });
-
-        
-
-      });
-    </script>
+    
 
     </div>
