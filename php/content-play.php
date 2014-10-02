@@ -264,10 +264,7 @@ if ($ip=="195.194.187.26") {
       function pauseVideo() {
 
      
-             
-        }
-
-        
+       
       }
     </script>
 
