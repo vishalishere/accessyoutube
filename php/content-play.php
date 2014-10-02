@@ -248,28 +248,8 @@ if ($ip=="195.194.187.26") {
       function onPlayerReady(event) {
         event.target.playVideo();
 
-        var play = true;
-      }
+             }
 
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-    
-
-
-             function pauseVideo() {
-
-              if (play==true){
-
-     
-              player.stopVideo();
-
-            }
-
-        
-      }
-
-          
         
       
       
