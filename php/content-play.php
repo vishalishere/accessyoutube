@@ -256,7 +256,7 @@ if ($ip=="195.194.187.26") {
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
 
-            ar pauseButton = document.getElementById("pause-button");
+            var pauseButton = document.getElementById("pause-button");
   pauseButton.addEventListener("click", function() {
     player.pauseVideo();
   });
