@@ -104,7 +104,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
   <div class="control-shadow">
     <li>
     <?php focusjs('play','control-link')?>
-      <div id="play" class="control-link">
+      <div id="play" id="pause-button" class="control-link">
         <a href="#" <?php focus(play)?> > 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br>Pause / Play
@@ -117,7 +117,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
     <li>
     <?php focusjs('repeat','control-link')?>
       <div id="repeat" class="control-link">
-       <a href="#" id="pause-button" <?php focus(repeat)?> onClick="window.location.reload()">
+       <a href="#"  <?php focus(repeat)?> onClick="window.location.reload()">
         <img src="../img/media_repeat.png" alt="Play Again">
         </br>Play Again
         </a>
