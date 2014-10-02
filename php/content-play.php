@@ -1,4 +1,55 @@
 
+  
+
+
+<script type="text/javascript">//<![CDATA[ 
+$(window).load(function(){
+$(function(){
+
+        var yt_int, yt_players={},
+            initYT = function() {
+                $(".ytplayer").each(function() {
+                    yt_players[this.id] = new YT.Player(this.id);
+                });
+            };
+
+        $.getScript("//www.youtube.com/player_api", function() {
+            yt_int = setInterval(function(){
+                if(typeof YT === "object"){
+                    initYT();
+                    clearInterval(yt_int);
+                }
+            },500);
+        });
+
+        $('#play').on('click', function(){
+          yt_players['player1'].playVideo();
+        });
+
+        $('#pause').on('click', function(){
+          yt_players['player1'].pauseVideo();
+        });
+
+        
+
+      });
+});//]]>  
+
+</script>
+
+
+  <iframe id="player1" class="ytplayer" width="430" height="241" src="http://www.youtube.com/embed/HVhSasnVjMQ?enablejsapi=1&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+
+  <button id="play">Click to Play Video</button>
+  <button id="pause">Click to Pause Video</button>
+  
+  
+
+
+
+
+
+
 <?php
 
 //separate content page for the play module - as defined in play/index.php

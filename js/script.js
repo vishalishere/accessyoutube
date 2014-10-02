@@ -36,38 +36,3 @@
         }
 
 
-//<![CDATA[ 
-$(window).load(function(){
-$(function(){
-
-        var yt_int, yt_players={},
-            initYT = function() {
-                $(".ytplayer").each(function() {
-                    yt_players[this.id] = new YT.Player(this.id);
-                });
-            };
-
-        $.getScript("//www.youtube.com/player_api", function() {
-            yt_int = setInterval(function(){
-                if(typeof YT === "object"){
-                    initYT();
-                    clearInterval(yt_int);
-                }
-            },500);
-        });
-
-        $('#play').on('click', function(){
-          yt_players['player1'].playVideo();
-        });
-
-        $('#pause').on('click', function(){
-          yt_players['player1'].pauseVideo();
-        });
-
-        
-
-      });
-});//]]>  
-
-
-
