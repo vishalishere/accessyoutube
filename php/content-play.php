@@ -95,7 +95,6 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 
 
 
-<input type="button" id="vol_up">
 <input type="button" id="vol_down">
 
 			
@@ -128,6 +127,18 @@ if ($ios != true){
         <a href="#" <?php focus(play)?> > 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br>Pause / Play
+        </a>
+      </div>
+    </li>
+  </div> 
+
+  <div class="control-shadow">
+    <li>
+    <?php focusjs('vol_up','control-link')?>
+      <div id="vol_up" class="control-link">
+        <a href="#" <?php focus(vol_up)?> > 
+          <img src="../img/volume_up.png" alt="Volume Up">
+          </br>Volume Up
         </a>
       </div>
     </li>
@@ -250,8 +261,8 @@ function onPlayerReady(event) {
  $("#vol_up").click( function(){
         if(player){
             var currentVol = player.getVolume();
-            if((currentVol+10) <= 100){
-                player.setVolume(currentVol+10);
+            if((currentVol+20) <= 100){
+                player.setVolume(currentVol+20);
                           }
         }
     });
@@ -259,8 +270,8 @@ function onPlayerReady(event) {
     $("#vol_down").click( function(){
         if(player){
             var currentVol = player.getVolume();
-            if((currentVol-10) >= 0){
-                player.setVolume(currentVol-10);
+            if((currentVol-20) >= 0){
+                player.setVolume(currentVol-20);
             }
         }
     });
