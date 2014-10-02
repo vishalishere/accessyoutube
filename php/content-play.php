@@ -218,7 +218,7 @@ if ($ip=="195.194.187.26") {
 
    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <iframe id="player" tabindex="-1" type="text/html" width="100%" height="100%"
-  src="http://www.youtube.com/embed/<?php echo $v;?>?autoplay=1enablejsapi=1&origin=http://accessyoutube.org.uk"
+  src="https://www.youtube.com/embed/<?php echo $v;?>?autoplay=1&controls=0&showinfo=0&rel=0&origin=http://accessyoutube.org.uk"
   frameborder="0"></iframe>
 
     <script>
