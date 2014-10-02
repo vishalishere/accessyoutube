@@ -220,7 +220,14 @@ function onYouTubePlayerAPIReady() {
 
 function onPlayerReady(event) {
 
+if (event.data == YT.PlayerState.PLAYING) {
     $("#play a").click(pauseVideo);
+
+  }
+else {
+$("#play a").click(playVideo);
+  
+}
           
         
 }
