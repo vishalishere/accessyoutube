@@ -103,7 +103,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
     <li>
     <?php focusjs('play','control-link')?>
       <div id="play" class="control-link">
-        <a href="#" <?php focus(play)?> onclick="pauseVideo()"> 
+        <a href="#" <?php focus(play)?> > 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br>Pause / Play
         </a>
@@ -252,14 +252,19 @@ if ($ip=="195.194.187.26") {
       // 5. The API calls this function when the player's state changes.
       //    The function indicates that when playing a video (state=1),
       //    the player should play for six seconds and then stop.
-      var done = false;
+      
       function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
+        if (event.data == YT.PlayerState.PLAYING) {
 
+        $("#play a").click(pauseVideo);
           
         }
       }
       
+
+       function pauseVideo() {
+        player.pauseVideo();
+      }
 
    
     </script>
