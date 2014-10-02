@@ -39,7 +39,7 @@ top: 20px;
 bottom: 20px;   }
 }
 
-h2 {
+h3 {
 margin:0;
 }
 </style>
@@ -62,7 +62,7 @@ $xmlInfoVideo    = simplexml_load_file("http://gdata.youtube.com/feeds/api/video
 
 foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string) $title); }
 ?>
-<h2><?php echo $videoTitle;?> </h2>
+<h3><?php echo $videoTitle;?> </h3>
 
 
 
