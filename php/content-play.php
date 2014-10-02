@@ -103,7 +103,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
     <li>
     <?php focusjs('play','control-link')?>
       <div id="play" class="control-link">
-        <a id="pause-button" href="#" <?php focus(play)?> > 
+        <a href="#" <?php focus(play)?> onclick="pauseVideo()"> 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br>Pause / Play
         </a>
@@ -256,13 +256,18 @@ if ($ip=="195.194.187.26") {
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
 
-
-      }
           
-         }
-       }
+        }
+      }
+      
 
-   
+      function pauseVideo() {
+
+     
+
+
+        
+      }
     </script>
 
     </div>
