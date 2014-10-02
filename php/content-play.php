@@ -95,7 +95,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 
 
 
-<button id="vol_up"/>
+<input type="button" id="vol_up">
 
 			
 <div id="controlheader">		
