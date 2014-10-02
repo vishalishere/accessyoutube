@@ -1,5 +1,7 @@
 <script>
-    $(function(){
+    //<![CDATA[ 
+$(window).load(function(){
+$(function(){
 
         var yt_int, yt_players={},
             initYT = function() {
@@ -28,6 +30,8 @@
         
 
       });
+});//]]>  
+
     </script>
 
 <?php
