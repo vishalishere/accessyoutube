@@ -214,20 +214,36 @@ function onYouTubePlayerAPIReady() {
   player = new YT.Player('video', {
     events: {
       // call this function when player is ready to use
-      'onReady': onPlayerReady
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
     }
   });
 }
 
-function onPlayerReady(event) {
-  
- $( "pause-button" ).click(pauseVideo);
-}
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
 
+        $("#play a").click(pauseVideo);
+          
+        }
 
-   function pauseVideo() {
+        else {
+
+            $("#play a").click(playVideo);
+
+        }
+      }
+      
+
+       function pauseVideo() {
         player.pauseVideo();
       }
+
+
+           function playVideo() {
+        player.playVideo();
+      }
+
 
 
 // Inject YouTube API script
