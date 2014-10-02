@@ -96,6 +96,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 
 
 <input type="button" id="vol_up">
+<input type="button" id="vol_down">
 
 			
 <div id="controlheader">		
@@ -246,14 +247,23 @@ function onPlayerReady(event) {
          
     $("#play a").click(pauseVideo);
 
-$("#vol_up").click( function(){
+ $("#vol_up").click( function(){
         if(player){
             var currentVol = player.getVolume();
             if((currentVol+10) <= 100){
                 player.setVolume(currentVol+10);
                           }
         }
+    });
 
+    $("#vol_down").click( function(){
+        if(player){
+            var currentVol = player.getVolume();
+            if((currentVol-10) >= 0){
+                player.setVolume(currentVol-10);
+            }
+        }
+    });
         
 }
       function onPlayerStateChange(event) {
