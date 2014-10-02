@@ -102,9 +102,11 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 
 
 <ul class="controls">  
-<?php if(strstr($SERVER['HTTPUSERAGENT'],’iPhone’) || strstr($SERVER['HTTPUSERAGENT'],’iPod’)) || strstr($SERVER['HTTPUSERAGENT'],’iPad’)){}
+<?php 
 
-else {
+// if(strstr($SERVER['HTTPUSERAGENT'],’iPhone’) || strstr($SERVER['HTTPUSERAGENT'],’iPod’)) || strstr($SERVER['HTTPUSERAGENT'],’iPad’)){}
+
+// else {
 ?>
 
   <div class="control-shadow">
@@ -120,7 +122,7 @@ else {
   </div>
   
 <?php
-  }
+  // }
 
   ?>
   <div class="control-shadow">
