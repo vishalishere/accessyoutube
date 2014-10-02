@@ -106,7 +106,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 
 if(strstr($SERVER['HTTPUSERAGENT'],’iPhone’) || strstr($SERVER['HTTPUSERAGENT'],’iPod’) || strstr($SERVER['HTTPUSERAGENT'],’iPad’)){}
 
-// else {
+else {
 ?>
 
   <div class="control-shadow">
@@ -122,7 +122,7 @@ if(strstr($SERVER['HTTPUSERAGENT'],’iPhone’) || strstr($SERVER['HTTPUSERAGEN
   </div>
   
 <?php
-  // }
+ }
 
   ?>
   <div class="control-shadow">
