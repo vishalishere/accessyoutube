@@ -236,7 +236,7 @@ if ($ip=="195.194.187.26") {
           height: '100%',
          width: '100%',
           videoId: '<?php echo $v;?>',
-          'suggestedQuality': 'highres',
+          suggestedQuality: 'highres',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
