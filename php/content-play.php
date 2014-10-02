@@ -213,7 +213,8 @@ if ($ip=="195.194.187.26") {
     </script>
 
     --> 
-
+  <button id="play">Click to Play Video</button>
+  <button id="pause">Click to Pause Video</button
 <div id="vidwrap" tabindex="-1">
 
    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
@@ -222,7 +223,7 @@ if ($ip=="195.194.187.26") {
   frameborder="0"></iframe>
 
     <script>
-    $(function(){
+     $(function(){
 
         var yt_int, yt_players={},
             initYT = function() {
@@ -241,20 +242,16 @@ if ($ip=="195.194.187.26") {
         });
 
         $('#play').on('click', function(){
-          yt_players['player'].playVideo();
+          yt_players['player1'].playVideo();
         });
 
         $('#pause').on('click', function(){
-          yt_players['player'].pauseVideo();
+          yt_players['player1'].pauseVideo();
         });
 
         
 
       });
-   
     </script>
 
     </div>
-
-      <button id="play">Click to Play Video</button>
-  <button id="pause">Click to Pause Video</button>
