@@ -208,7 +208,7 @@ function onYouTubePlayerAPIReady() {
   player = new YT.Player('video', {
     events: {
       // call this function when player is ready to use
-      'onReady': onPlayerReady
+      'onReady': onPlayerReady,
       'onStateChange': onPlayerStateChange
     }
   });
@@ -216,17 +216,18 @@ function onYouTubePlayerAPIReady() {
 
 function onPlayerReady(event) {
   
-    var pauseButton = document.getElementById("pause-button");
+  // bind events
+  var playButton = document.getElementById("play-button");
+  playButton.addEventListener("click", function() {
+    player.playVideo();
+  });
+  
+  var pauseButton = document.getElementById("pause-button");
   pauseButton.addEventListener("click", function() {
     player.pauseVideo();
   });
- 
+  
 }
-
-
-function onPlayerStateChange(event) {
-    
-      }
 
 
 
