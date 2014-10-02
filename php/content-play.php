@@ -88,6 +88,10 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 			
 <div id="controlheader">		
 
+  <input type="button" id="play-button">
+ 
+
+  <input type="button"  id="pause-button">
   <fieldset class="search"> 
       <form method="post" name="search" action="<?php echo $folder;?>php/db.php">
       <?php focusjs('search','search')?>
