@@ -236,11 +236,13 @@ if ($ip=="195.194.187.26") {
           height: '100%',
          width: '100%',
           videoId: '<?php echo $v;?>',
-          suggestedQuality: 'highres',
+          playerVars: { 'autoplay': 1, 'controls': 0 },
           events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
+      'onReady': onPlayerReady,
+      'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
+      'onStateChange': onPlayerStateChange,
+      'onError': onPlayerError
+    }
         });
       }
 
