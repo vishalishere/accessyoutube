@@ -254,20 +254,23 @@ if ($ip=="195.194.187.26") {
       //    the player should play for six seconds and then stop.
       var done = false;
       function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
+        if (event.data == YT.PlayerState.PLAYING) {
 
-          
-        }
-      }
-      
 
-      function pauseVideo() {
+             function pauseVideo() {
 
      
 player.stopVideo();
 
         
       }
+
+          
+        }
+      }
+      
+
+   
     </script>
 
     </div>
