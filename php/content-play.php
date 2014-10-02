@@ -225,19 +225,7 @@ function onPlayerReady(event) {
 
     $("#play a").click(pauseVideo);
           
-      
-  
-  // bind events
-  var playButton = document.getElementById("play-button");
-  playButton.addEventListener("click", function() {
-    player.playVideo();
-  });
-  
-  var pauseButton = document.getElementById("pause-button");
-  pauseButton.addEventListener("click", function() {
-    player.pauseVideo();
-  });
-  
+        
 }
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
