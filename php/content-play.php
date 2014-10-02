@@ -94,10 +94,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 <h3><?php echo $videoTitle;?> </h3>
 
 
-
-<input type="button" id="vol_down">
-
-			
+		
 <div id="controlheader">		
  
   <fieldset class="search"> 
@@ -150,7 +147,7 @@ if ($ios != true){
       <div id="vol_down" class="control-link">
         <a href="#" <?php focus(vol_down)?> > 
           <img src="../img/volume_down.png" alt="Volume Down">
-          </br>Volume Up
+          </br>Volume Down
         </a>
       </div>
     </li>
