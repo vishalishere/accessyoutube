@@ -214,8 +214,9 @@ if ($ip=="195.194.187.26") {
 
     --> 
 
+<div id="vidwrap">
 
-    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+   <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <div id="player"></div>
 
     <script>
@@ -260,3 +261,5 @@ if ($ip=="195.194.187.26") {
         player.stopVideo();
       }
     </script>
+
+    </div>
