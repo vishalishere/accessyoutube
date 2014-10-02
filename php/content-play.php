@@ -36,7 +36,7 @@ margin-top: 3px;
 }
 
 ul {
-  padding-top: 0;
+  padding: 0;
 }
 
 @media only screen and (min-width: 1200px) {
