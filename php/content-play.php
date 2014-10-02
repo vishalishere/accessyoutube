@@ -184,8 +184,8 @@ if ($ip=="195.194.187.26") {
 
 			
 		</div> <!--  #main -->
-	</div><!--  #main-container -->  
-  
+	</div> <!-- #main-container  -->
+  <!-- 
     <script src="http://www.google.com/jsapi" type="text/javascript"></script>
     <script type="text/javascript">google.load("swfobject", "2.1");</script>    
     <script type="text/javascript">
@@ -206,4 +206,53 @@ if ($ip=="195.194.187.26") {
         loadPlayer();
       }
       google.setOnLoadCallback(_run);
+    </script>
+
+    --> 
+
+
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player"></div>
+
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+
+          height: '100%',
+         width: '100%',
+          videoId: '<?php echo $v;?>',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
     </script>
