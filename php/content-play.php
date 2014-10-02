@@ -217,9 +217,9 @@ if ($ip=="195.194.187.26") {
 <div id="vidwrap" tabindex="-1">
 
    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-<!--     <iframe id="player" tabindex="-1" type="text/html" width="100%" height="100%"
+    <iframe id="player" tabindex="-1" type="text/html" width="100%" height="100%"
   src="https://www.youtube.com/embed/<?php echo $v;?>?enablejsapi=1&autoplay=1&iv_load_policy=3&controls=0&showinfo=0&rel=0&modestbranding=1&origin=http://accessyoutube.org.uk"
-  frameborder="0"></iframe> -->
+  frameborder="0"></iframe>
 
     <script>
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -280,73 +280,4 @@ if ($ip=="195.194.187.26") {
 
     </div>
 
- 
-<h1>Pause / Play Buttons for YouTube Videos</h1>
-
-<!-- Make sure ?enablejsapi=1 is on URL -->
-<iframe id="video" src="//www.youtube.com/embed/FKWwdQu6_ok?enablejsapi=1&amp;html5=1" frameborder="0" allowfullscreen=""></iframe>
-
-<!-- 
-SVG ==
-http://thenounproject.com/term/play/23255/ 
-http://css-tricks.com/svg-tabs-using-svg-shape-template/
--->
-<svg class="defs">
-  <defs>
-    <path id="pause-button-shape" d="M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0z M21,33.064c0,2.201-1.688,4-3.75,4
-  s-3.75-1.799-3.75-4V14.934c0-2.199,1.688-4,3.75-4s3.75,1.801,3.75,4V33.064z M34.5,33.064c0,2.201-1.688,4-3.75,4
-  s-3.75-1.799-3.75-4V14.934c0-2.199,1.688-4,3.75-4s3.75,1.801,3.75,4V33.064z"></path>
-    <path id="play-button-shape" d="M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0z M31.672,26.828l-9.344,9.344
-  C20.771,37.729,19.5,37.2,19.5,35V13c0-2.2,1.271-2.729,2.828-1.172l9.344,9.344C33.229,22.729,33.229,25.271,31.672,26.828z"></path>
-  </defs>
-</svg>
-
-<div class="buttons">
-  <!-- if we needed to change height/width we could use viewBox here -->
-  <svg class="button" id="play-button">
-    <use xlink:href="#play-button-shape">
-  </use></svg>
-  <svg class="button" id="pause-button">
-    <use xlink:href="#pause-button-shape">
-  </use></svg>
-</div>
-
-<script id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vflwkdsWs/www-widgetapi.js" async=""></script><script src="//www.youtube.com/player_api"></script><script>// https://developers.google.com/youtube/iframe_api_reference
-
-// global variable for the player
-var player;
-
-// this function gets called when API is ready to use
-function onYouTubePlayerAPIReady() {
-  // create the global player from the specific iframe (#video)
-  player = new YT.Player('video', {
-    events: {
-      // call this function when player is ready to use
-      'onReady': onPlayerReady
-    }
-  });
-}
-
-function onPlayerReady(event) {
-  
-  // bind events
-  var playButton = document.getElementById("play-button");
-  playButton.addEventListener("click", function() {
-    player.playVideo();
-  });
-  
-  var pauseButton = document.getElementById("pause-button");
-  pauseButton.addEventListener("click", function() {
-    player.pauseVideo();
-  });
-  
-}
-
-// Inject YouTube API script
-var tag = document.createElement('script');
-tag.src = "//www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-</script>
-
+    
