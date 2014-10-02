@@ -220,10 +220,8 @@ function onYouTubePlayerAPIReady() {
 
 function onPlayerReady(event) {
 
-          
-  event.target.playVideo();
+         
     $("#play a").click(pauseVideo);
-
         
 }
       function onPlayerStateChange(event) {
