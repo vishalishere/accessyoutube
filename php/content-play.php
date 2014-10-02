@@ -35,6 +35,10 @@ margin:0;
 margin-top: 3px;
 }
 
+ul {
+  padding-top: 0;
+}
+
 @media only screen and (min-width: 1200px) {
 #page-container {
 position: absolute;
@@ -176,11 +180,11 @@ if ($ip=="195.194.187.26") {
  </div>
 
 
-  <div id=vidwrap>      
+<!--   <div id=vidwrap>      
  	
     <div id="videoDiv">Loading...</div>
 
-  </div>
+  </div> -->
 
 			
 		</div> <!--  #main -->
