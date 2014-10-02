@@ -238,11 +238,9 @@ if ($ip=="195.194.187.26") {
           videoId: '<?php echo $v;?>',
           playerVars: { 'autoplay': 1, 'controls': 0 },
           events: {
-      'onReady': onPlayerReady,
-      'onPlaybackQualityChange': onPlayerPlaybackQualityChange,
-      'onStateChange': onPlayerStateChange,
-      'onError': onPlayerError
-    }
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
         });
       }
 
