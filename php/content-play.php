@@ -225,21 +225,10 @@ function onPlayerReady(event) {
 
 
 function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING  {
-          $('#play a').click(pauseVideo);
-        }
-        else {
-          $('#play a').click(playVideo);
-        }
+    
       }
 
-function pauseVideo() {
- player.pauseVideo();
-}
 
-function playVideo() {
- player.playVideo();
-}
 
 // Inject YouTube API script
 var tag = document.createElement('script');
