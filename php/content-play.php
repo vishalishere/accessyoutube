@@ -89,6 +89,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 <div id="controlheader">		
         
   <input type="button" id="play-button">
+  <input type="button" id="pause-button">
  
   <fieldset class="search"> 
       <form method="post" name="search" action="<?php echo $folder;?>php/db.php">
@@ -104,7 +105,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
   <div class="control-shadow">
     <li>
     <?php focusjs('play','control-link')?>
-      <div id="play" id="pause-button"class="control-link">
+      <div id="play" class="control-link">
         <a href="#" <?php focus(play)?> > 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br>Pause / Play
@@ -191,30 +192,7 @@ if ($ip=="195.194.187.26") {
 			
 		</div> <!--  #main -->
 	</div> <!-- #main-container  -->
-  <!-- 
-    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-    <script type="text/javascript">google.load("swfobject", "2.1");</script>    
-    <script type="text/javascript">
-  
-              
-     // The "main method" of this sample. Called when someone clicks "Run".
-      function loadPlayer() {
-        // Lets Flash from another domain call JavaScript
-        var params = { allowScriptAccess: "always" };
-        // The element id of the Flash embed
-        var atts = { id: "ytPlayer" };
-        // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
-        swfobject.embedSWF("http://www.youtube.com/e/<?php echo $v;?>" + 
-                           "?showinfo=0&autoplay=1&autohide=1&showsearch=0&rel=1&showsearch=0&enablejsapi=1&playerapiid=player1", 
-                           "videoDiv", "100%", "100%", "8", null, null, params, atts);
-      }
-      function _run() {
-        loadPlayer();
-      }
-      google.setOnLoadCallback(_run);
-    </script>
 
-    --> 
 
 
 
@@ -243,18 +221,14 @@ function onYouTubePlayerAPIReady() {
 
 function onPlayerReady(event) {
   
-  // bind events
-  var playButton = document.getElementById("play-button");
-  playButton.addEventListener("click", function() {
-    player.playVideo();
-  });
-  
-  var pauseButton = document.getElementById("pause-button");
-  pauseButton.addEventListener("click", function() {
-    player.pauseVideo();
-  });
-  
+ $( "pause-button" ).click(pauseVideo);
 }
+
+
+   function pauseVideo() {
+        player.pauseVideo();
+      }
+
 
 // Inject YouTube API script
 var tag = document.createElement('script');
