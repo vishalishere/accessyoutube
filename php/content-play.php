@@ -98,7 +98,15 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
       </form>
   </fieldset>
 
+
+
+
 <ul class="controls">  
+<?php if(strstr($SERVER['HTTPUSERAGENT'],’iPhone’) || strstr($SERVER['HTTPUSERAGENT'],’iPod’)) || strstr($SERVER['HTTPUSERAGENT'],’iPad’)){}
+
+else {
+?>
+
   <div class="control-shadow">
     <li>
     <?php focusjs('play','control-link')?>
@@ -111,6 +119,10 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
     </li>
   </div>
   
+<?php
+  }
+
+  ?>
   <div class="control-shadow">
     <li>
     <?php focusjs('repeat','control-link')?>
