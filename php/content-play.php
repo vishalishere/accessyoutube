@@ -259,11 +259,22 @@ if ($ip=="195.194.187.26") {
         $("#play a").click(pauseVideo);
           
         }
+
+        else {
+
+            $("#play a").click(playVideo);
+
+        }
       }
       
 
        function pauseVideo() {
         player.pauseVideo();
+      }
+
+
+           function playVideo() {
+        player.playVideo();
       }
 
    
