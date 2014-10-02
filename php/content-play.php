@@ -222,6 +222,10 @@ function onYouTubePlayerAPIReady() {
 
 
 function onPlayerReady(event) {
+
+    $("#play a").click(pauseVideo);
+          
+        }
   
   // bind events
   var playButton = document.getElementById("play-button");
