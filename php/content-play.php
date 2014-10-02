@@ -50,7 +50,6 @@ bottom: 20px;   }
 }
 
 h3 {
-margin:0;
 position: relative;
 top: -38px;
 height: 0;
