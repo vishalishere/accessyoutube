@@ -30,6 +30,11 @@ background: #dde url(/img/center-highlight-opacity.png) no-repeat center -400px 
 border:1px #ccc solid; 
 }
 
+h3 {
+margin:0;
+margin-top: 3px;
+}
+
 @media only screen and (min-width: 1200px) {
 #page-container {
 position: absolute;
@@ -37,11 +42,21 @@ left: 0px;
 right: 0px;
 top: 20px;
 bottom: 20px;   }
+
+
+#vidwrap {
+
+  top:160px;
 }
 
 h3 {
 margin:0;
+position: relative;
+top: -38px;
 }
+}
+
+
 </style>
 
 <?php 
