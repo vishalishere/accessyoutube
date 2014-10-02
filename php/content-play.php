@@ -116,9 +116,9 @@ if( $iPod || $iPhone || $ipad){
     echo 'ios device detected!';
 }
 
-else {
+else {}
 ?>
-
+<!-- 
   <div class="control-shadow">
     <li>
     <?php focusjs('play','control-link')?>
@@ -129,12 +129,9 @@ else {
         </a>
       </div>
     </li>
-  </div>
+  </div> -->
   
-<?php
- }
 
-  ?>
   <div class="control-shadow">
     <li>
     <?php focusjs('repeat','control-link')?>
