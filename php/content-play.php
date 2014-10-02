@@ -105,8 +105,8 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
     <li>
     <?php focusjs('play','control-link')?>
       <div id="play" class="control-link">
-        <a href="#" <?php focus(play)?> > 
-          <img id="pause-button" src="../img/media_play_pause_resume.png" alt="Pause / Play">
+        <a href="#" id="pause-button" <?php focus(play)?> > 
+          <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br>Pause / Play
         </a>
       </div>
