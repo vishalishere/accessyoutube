@@ -90,8 +90,6 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
         
   <input type="button" id="play-button">
  
-
-  <input type="button"  id="pause-button">
   <fieldset class="search"> 
       <form method="post" name="search" action="<?php echo $folder;?>php/db.php">
       <?php focusjs('search','search')?>
@@ -119,7 +117,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
     <li>
     <?php focusjs('repeat','control-link')?>
       <div id="repeat" class="control-link">
-       <a href="#" <?php focus(repeat)?> onClick="window.location.reload()">
+       <a href="#" id="pause-button" <?php focus(repeat)?> onClick="window.location.reload()">
         <img src="../img/media_repeat.png" alt="Play Again">
         </br>Play Again
         </a>
