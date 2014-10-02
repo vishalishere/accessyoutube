@@ -213,45 +213,69 @@ if ($ip=="195.194.187.26") {
     </script>
 
     --> 
-  <button id="play">Click to Play Video</button>
-  <button id="pause">Click to Pause Video</button
+
 <div id="vidwrap" tabindex="-1">
 
    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <iframe id="player" tabindex="-1" type="text/html" width="100%" height="100%"
-  src="https://www.youtube.com/embed/<?php echo $v;?>?enablejsapi&autoplay=1&iv_load_policy=3&controls=0&showinfo=0&rel=0&modestbranding=1&origin=http://accessyoutube.org.uk"
+  src="https://www.youtube.com/embed/<?php echo $v;?>?enablejsapi=1&autoplay=1&iv_load_policy=3&controls=0&showinfo=0&rel=0&modestbranding=1&origin=http://accessyoutube.org.uk"
   frameborder="0"></iframe>
 
     <script>
-     $(function(){
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
 
-        var yt_int, yt_players={},
-            initYT = function() {
-                $(".ytplayer").each(function() {
-                    yt_players[this.id] = new YT.Player(this.id);
-                });
-            };
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-        $.getScript("//www.youtube.com/player_api", function() {
-            yt_int = setInterval(function(){
-                if(typeof YT === "object"){
-                    initYT();
-                    clearInterval(yt_int);
-                }
-            },500);
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
         });
+      }
 
-        $('#play').on('click', function(){
-          yt_players['player1'].playVideo();
-        });
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
 
-        $('#pause').on('click', function(){
-          yt_players['player1'].pauseVideo();
-        });
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING) {
 
-        
+        $("#play a").click(pauseVideo);
+          
+        }
 
-      });
+        else {
+
+            $("#play a").click(playVideo);
+
+        }
+      }
+      
+
+       function pauseVideo() {
+        player.pauseVideo();
+      }
+
+
+           function playVideo() {
+        player.playVideo();
+      }
+
+   
     </script>
 
     </div>
