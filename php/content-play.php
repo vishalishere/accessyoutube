@@ -137,7 +137,7 @@ if ($ios != true){
     <?php focusjs('vol_up','control-link')?>
       <div id="vol_up" class="control-link">
         <a href="#" <?php focus(vol_up)?> > 
-          <img src="../img/volume_up.png" alt="Volume Up">
+          <img src="../img/media_play_pause_resume.png" alt="Volume Up">
           </br>Volume Up
         </a>
       </div>
