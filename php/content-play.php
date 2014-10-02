@@ -1,4 +1,15 @@
 <?php
+//Detect special conditions devices
+$iPod    = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
+$iPhone  = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+$iPad    = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
+$Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android");
+$webOS   = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
+
+//do something with this information
+if( $iPod || $iPhone || $ipad){
+    echo 'ios device detected!';
+}
 
 //separate content page for the play module - as defined in play/index.php
 
@@ -104,19 +115,8 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 <ul class="controls">  
 <?php 
 
-//Detect special conditions devices
-$iPod    = stripos($_SERVER['HTTP_USER_AGENT'],"iPod");
-$iPhone  = stripos($_SERVER['HTTP_USER_AGENT'],"iPhone");
-$iPad    = stripos($_SERVER['HTTP_USER_AGENT'],"iPad");
-$Android = stripos($_SERVER['HTTP_USER_AGENT'],"Android");
-$webOS   = stripos($_SERVER['HTTP_USER_AGENT'],"webOS");
 
-//do something with this information
-if( $iPod || $iPhone || $ipad){
-    echo 'ios device detected!';
-}
 
-else {}
 ?>
 <!-- 
   <div class="control-shadow">
