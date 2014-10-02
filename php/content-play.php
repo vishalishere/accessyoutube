@@ -10,8 +10,6 @@
     }
  
 
-if ($ios == true) {echo 'ios!';}
-
 //separate content page for the play module - as defined in play/index.php
 
 ?>
@@ -116,10 +114,10 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 <ul class="controls">  
 <?php 
 
-
+if ($ios != true){
 
 ?>
-<!-- 
+
   <div class="control-shadow">
     <li>
     <?php focusjs('play','control-link')?>
@@ -130,8 +128,9 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
         </a>
       </div>
     </li>
-  </div> -->
+  </div> 
   
+  <?php } ?>
 
   <div class="control-shadow">
     <li>
