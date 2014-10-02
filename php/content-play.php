@@ -222,60 +222,39 @@ if ($ip=="195.194.187.26") {
   frameborder="0"></iframe>
 
     <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
+    $(function(){
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        var yt_int, yt_players={},
+            initYT = function() {
+                $(".ytplayer").each(function() {
+                    yt_players[this.id] = new YT.Player(this.id);
+                });
+            };
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
+        $.getScript("//www.youtube.com/player_api", function() {
+            yt_int = setInterval(function(){
+                if(typeof YT === "object"){
+                    initYT();
+                    clearInterval(yt_int);
+                }
+            },500);
         });
-      }
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
+        $('#play').on('click', function(){
+          yt_players['player'].playVideo();
+        });
 
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
+        $('#pause').on('click', function(){
+          yt_players['player'].pauseVideo();
+        });
 
-        $("#play a").click(pauseVideo);
-          
-        }
+        
 
-        else {
-
-            $("#play a").click(playVideo);
-
-        }
-      }
-      
-
-       function pauseVideo() {
-        player.pauseVideo();
-      }
-
-
-           function playVideo() {
-        player.playVideo();
-      }
-
+      });
    
     </script>
 
     </div>
+
+      <button id="play">Click to Play Video</button>
+  <button id="pause">Click to Pause Video</button>
