@@ -258,17 +258,17 @@ if ($ip=="195.194.187.26") {
 
 
 
-
+          player.pauseVideo();
 
           
         }
       }
       
 
-      function pauseVideo(event) {
+      function pauseVideo() {
 
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-              player.pauseVideo();
+     
+             
         }
 
         
