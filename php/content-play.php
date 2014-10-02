@@ -1,55 +1,3 @@
-
-  
-
-
-<script type="text/javascript">//<![CDATA[ 
-$(window).load(function(){
-$(function(){
-
-        var yt_int, yt_players={},
-            initYT = function() {
-                $(".ytplayer").each(function() {
-                    yt_players[this.id] = new YT.Player(this.id);
-                });
-            };
-
-        $.getScript("//www.youtube.com/player_api", function() {
-            yt_int = setInterval(function(){
-                if(typeof YT === "object"){
-                    initYT();
-                    clearInterval(yt_int);
-                }
-            },500);
-        });
-
-        $('#play').on('click', function(){
-          yt_players['player1'].playVideo();
-        });
-
-        $('#pause').on('click', function(){
-          yt_players['player1'].pauseVideo();
-        });
-
-        
-
-      });
-});//]]>  
-
-</script>
-
-
-  <iframe id="player1" class="ytplayer" width="430" height="241" src="http://www.youtube.com/embed/HVhSasnVjMQ?enablejsapi=1&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe>
-
-  <button id="play">Click to Play Video</button>
-  <button id="pause">Click to Pause Video</button>
-  
-  
-
-
-
-
-
-
 <?php
 
 //separate content page for the play module - as defined in play/index.php
@@ -231,25 +179,79 @@ if ($ip=="195.194.187.26") {
 
  </div>
 
+
+<!--   <div id=vidwrap>      
+ 	
+    <div id="videoDiv">Loading...</div>
+
+  </div> -->
+
 			
 		</div> <!--  #main -->
 	</div> <!-- #main-container  -->
+  <!-- 
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">google.load("swfobject", "2.1");</script>    
+    <script type="text/javascript">
+  
+              
+     // The "main method" of this sample. Called when someone clicks "Run".
+      function loadPlayer() {
+        // Lets Flash from another domain call JavaScript
+        var params = { allowScriptAccess: "always" };
+        // The element id of the Flash embed
+        var atts = { id: "ytPlayer" };
+        // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+        swfobject.embedSWF("http://www.youtube.com/e/<?php echo $v;?>" + 
+                           "?showinfo=0&autoplay=1&autohide=1&showsearch=0&rel=1&showsearch=0&enablejsapi=1&playerapiid=player1", 
+                           "videoDiv", "100%", "100%", "8", null, null, params, atts);
+      }
+      function _run() {
+        loadPlayer();
+      }
+      google.setOnLoadCallback(_run);
+    </script>
 
     --> 
-
+  <button id="play">Click to Play Video</button>
+  <button id="pause">Click to Pause Video</button
 <div id="vidwrap" tabindex="-1">
 
    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-<!--     <iframe id="player" tabindex="-1" type="text/html" width="100%" height="100%"
+    <iframe id="player" tabindex="-1" type="text/html" width="100%" height="100%"
   src="https://www.youtube.com/embed/<?php echo $v;?>?enablejsapi&autoplay=1&iv_load_policy=3&controls=0&showinfo=0&rel=0&modestbranding=1&origin=http://accessyoutube.org.uk"
-  frameborder="0"></iframe> -->
+  frameborder="0"></iframe>
 
+    <script>
+     $(function(){
 
-<iframe id="player1" class="ytplayer" width="430" height="241" src="http://www.youtube.com/embed/HVhSasnVjMQ?enablejsapi=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+        var yt_int, yt_players={},
+            initYT = function() {
+                $(".ytplayer").each(function() {
+                    yt_players[this.id] = new YT.Player(this.id);
+                });
+            };
 
-  <button id="play">Click to Play Video</button>
-  <button id="pause">Click to Pause Video</button>
-  
-    
+        $.getScript("//www.youtube.com/player_api", function() {
+            yt_int = setInterval(function(){
+                if(typeof YT === "object"){
+                    initYT();
+                    clearInterval(yt_int);
+                }
+            },500);
+        });
+
+        $('#play').on('click', function(){
+          yt_players['player1'].playVideo();
+        });
+
+        $('#pause').on('click', function(){
+          yt_players['player1'].pauseVideo();
+        });
+
+        
+
+      });
+    </script>
 
     </div>
