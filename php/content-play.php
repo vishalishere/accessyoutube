@@ -38,6 +38,10 @@ right: 0px;
 top: 20px;
 bottom: 20px;   }
 }
+
+h2 {
+margin:0;
+}
 </style>
 
 <?php 
@@ -53,7 +57,14 @@ $ip =&getIP();
 <div id="main-container">
 	<div id="main" class="wrapper clearfix"> 
  
- 
+ <?php
+$xmlInfoVideo    = simplexml_load_file("http://gdata.youtube.com/feeds/api/videos/".$v."?v=2&fields=title");
+
+foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string) $title); }
+?>
+<h2><?php echo $videoTitle;?> </h2>
+
+
 
 			
 <div id="controlheader">		
@@ -145,14 +156,6 @@ if ($ip=="195.194.187.26") {
   
 </ul>
 
-<?php
-$xmlInfoVideo    = simplexml_load_file("http://gdata.youtube.com/feeds/api/videos/".$v."?v=2&fields=title");
-
-foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string) $title); }
-
-echo $videoTitle;
-
-?>
 
 
  </div>
