@@ -214,70 +214,56 @@ if ($ip=="195.194.187.26") {
 
     --> 
 
+    
+  <input type="button" id="play-button">
+ 
+
+  <input type="button"  id="pause-button">
+
 <div id="vidwrap" tabindex="-1">
 
    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <iframe id="player" tabindex="-1" type="text/html" width="100%" height="100%"
-  src="https://www.youtube.com/embed/<?php echo $v;?>?enablejsapi=1&autoplay=1&iv_load_policy=3&controls=0&showinfo=0&rel=0&modestbranding=1&origin=http://accessyoutube.org.uk"
+    <iframe id="video" tabindex="-1" type="text/html" width="100%" height="100%"
+  src="//www.youtube.com/embed/<?php echo $v;?>?enablejsapi=1&html5=1&controls=0&autoplay=1&iv_load_policy=3&showinfo=0&rel=0&modestbranding=1"
   frameborder="0"></iframe>
 
     <script>
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// global variable for the player
+var player;
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
+// this function gets called when API is ready to use
+function onYouTubePlayerAPIReady() {
+  // create the global player from the specific iframe (#video)
+  player = new YT.Player('video', {
+    events: {
+      // call this function when player is ready to use
+      'onReady': onPlayerReady
+    }
+  });
+}
 
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
+function onPlayerReady(event) {
+  
+  // bind events
+  var playButton = document.getElementById("play-button");
+  playButton.addEventListener("click", function() {
+    player.playVideo();
+  });
+  
+  var pauseButton = document.getElementById("pause-button");
+  pauseButton.addEventListener("click", function() {
+    player.pauseVideo();
+  });
+  
+}
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-
-        $("#play a").click(pauseVideo);
-          
-        }
-
-        else {
-
-            $("#play a").click(playVideo);
-
-        }
-      }
-      
-
-       function pauseVideo() {
-        player.pauseVideo();
-      }
-
-
-           function playVideo() {
-        player.playVideo();
-      }
-
-   
-    </script>
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+</script>
 
     </div>
 
-    
