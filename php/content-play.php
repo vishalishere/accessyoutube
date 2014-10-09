@@ -131,9 +131,9 @@ if ($ios != true){
 
   <div class="control-shadow">
     <li>
-    <?php focusjs('vol_up','control-link')?>
-      <div id="vol_up" class="control-link">
-        <a href="#" <?php focus(vol_up)?> > 
+    <?php focusjs('volup','control-link')?>
+      <div id="volup" class="control-link">
+        <a href="#" <?php focus(volup)?> > 
           <img src="../img/volume_up.png" alt="Volume Up">
           </br>Volume Up
         </a>
@@ -143,9 +143,9 @@ if ($ios != true){
 
     <div class="control-shadow">
     <li>
-    <?php focusjs('vol_down','control-link')?>
-      <div id="vol_down" class="control-link">
-        <a href="#" <?php focus(vol_down)?> > 
+    <?php focusjs('voldown','control-link')?>
+      <div id="voldown" class="control-link">
+        <a href="#" <?php focus(voldown)?> > 
           <img src="../img/volume_down.png" alt="Volume Down">
           </br>Volume Down
         </a>
@@ -267,7 +267,7 @@ function onPlayerReady(event) {
          
     $("#play a").click(pauseVideo);
 
- $("#vol_up").click( function(){
+ $("#volup").click( function(){
         if(player){
             var currentVol = player.getVolume();
             if((currentVol+20) <= 100){
@@ -276,7 +276,7 @@ function onPlayerReady(event) {
         }
     });
 
-    $("#vol_down").click( function(){
+    $("#voldown").click( function(){
         if(player){
             var currentVol = player.getVolume();
             if((currentVol-20) >= 0){
