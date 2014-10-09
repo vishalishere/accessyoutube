@@ -1,9 +1,9 @@
-<?php
-print”<table border=1>”;
-foreach ($_SERVER as $key=>$val ){
-if ($key <> “HTTP_COOKIE” && $key <> “PATH”){
-echo “<tr><td>”.$key.”</td><td>” .$val.”</tr>”;
+<?PHP
+
+foreach($_SERVER as $key_name => $key_value) {
+
+print $key_name . ” = ” . $key_value . “<br>”;
+
 }
-}
-print”</table>”;
+
 ?>
