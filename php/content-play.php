@@ -1,5 +1,11 @@
 <?php
 
+include("Mobile_Detect.php");
+$detect = new Mobile_Detect();
+if ($detect->isMobile()) {
+    echo 'mobile browser detected';
+}
+
 //separate content page for the play module - as defined in play/index.php
 
 ?>
