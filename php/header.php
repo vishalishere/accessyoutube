@@ -1,15 +1,13 @@
-<div id="header-container">
-<div class="wrapper clearfix">
-			
 
-
-
-<!-- <h1 id="title">ACCESS: <img id="yt-title" src="<?php echo $folder;?>img/YouTube.png"></h1> -->
-
-<div id="header_img"><img src="<?php echo $folder;?>img/header.png" alt="access youtube"></div>
-<div id="header_logo"><img src="<?php echo $folder;?>img/main_logo.png" alt="access youtube"></div>
-
-          <hr>
-          
-          		</div>
+<header class="banner" role="banner">
+<div class='container'>
+<div class="row">
+ <div class="col-md-4"></div>
+   <div class="col-md-4"><img src="<?php echo $folder;?>img/header.png" class="img-responsive center-block"alt="access youtube"/></div>
+  <div class="col-md-4">
+  <!-- <img src="<?php echo $folder;?>img/main_logo.png" class=" pull-right" alt="henshaws college"/> --></div>
 </div>
+	</div>	
+</header>
+    <hr>
+

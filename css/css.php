@@ -21,10 +21,11 @@ ob_start("compress");
 	}
 
   	/* css files for compression */
-require_once ('begin.css');
+require_once('bootstrap.css');
+// require_once ('begin.css');
 require_once ('css.css');
-require_once ('media.css');
-require_once ('end.css');
+// require_once ('media.css');
+// require_once ('end.css');
 
 ob_end_flush();
 ?>
