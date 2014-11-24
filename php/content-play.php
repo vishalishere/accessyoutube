@@ -229,23 +229,23 @@ function onPlayerReady(event) {
          
     $("#play a").click(pauseVideo);
 
- $("#volup").click( function(){
-        if(player){
-            var currentVol = player.getVolume();
-            if((currentVol+20) <= 100){
-                player.setVolume(currentVol+20);
-                          }
-        }
-    });
+ // $("#volup").click( function(){
+ //        if(player){
+ //            var currentVol = player.getVolume();
+ //            if((currentVol+20) <= 100){
+ //                player.setVolume(currentVol+20);
+ //                          }
+ //        }
+ //    });
 
-    $("#voldown").click( function(){
-        if(player){
-            var currentVol = player.getVolume();
-            if((currentVol-20) >= 0){
-                player.setVolume(currentVol-20);
-            }
-        }
-    });
+ //    $("#voldown").click( function(){
+ //        if(player){
+ //            var currentVol = player.getVolume();
+ //            if((currentVol-20) >= 0){
+ //                player.setVolume(currentVol-20);
+ //            }
+ //        }
+ //    });
         
 }
       function onPlayerStateChange(event) {
