@@ -45,10 +45,6 @@ $ip =&getIP();
 
 
 
-//HTML5 for mobile devices
-include("Mobile_Detect.php");
-$detect = new Mobile_Detect();
-if ($detect->isMobile()) {
     
 ?>
 <div id="main-container">
@@ -75,8 +71,14 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
       </form>
   </fieldset>
 
+<?php
 
+//HTML5 for mobile devices
+include("Mobile_Detect.php");
+$detect = new Mobile_Detect();
+if ($detect->isMobile()) {
 
+?>
 
 <ul class="controls">  
 
@@ -291,24 +293,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 else {
 ?>
 
-
-<div id="main-container">
-	<div id="main" class="wrapper clearfix"> 
- 
- 
-
-			
-<div id="controlheader">		
-    
-  <fieldset class="search"> 
-      <form method="post" name="search" action="<?php echo $folder;?>php/db.php">
-      <?php focusjs('search','search')?>
-        <input <?php focus(search)?>  autocomplete="off" type="text" title="type here" id="<?php echo $big;?>search" class="<?php echo $big;?>search" label="type here" name="v" placeholder="type here..." />
-        <input type="hidden" name="db" value="submit">
-        <?php focusjs('btn','btn')?>
-        <input <?php focus(btn)?> type="submit" id="<?php echo $big;?>btn" class="<?php echo $big;?>btn" value="search" />  
-      </form>
-  </fieldset>
 
 <ul class="controls">  
   <div class="control-shadow">
