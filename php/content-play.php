@@ -1,14 +1,4 @@
 <?php
-//Detect special conditions devices
-
-    if (stripos($_SERVER['HTTP_USER_AGENT'],"iPhone")  !== false) {
-        $ios = true;
-    } elseif (stripos($_SERVER['HTTP_USER_AGENT'],"iPad") !== false) {
-        $ios = true;
-    } elseif (stripos($_SERVER['HTTP_USER_AGENT'],"iPod") !== false) {
-        $ios = true;
-    }
- 
 
 //separate content page for the play module - as defined in play/index.php
 
@@ -40,15 +30,6 @@ background: #dde url(/img/center-highlight-opacity.png) no-repeat center -400px 
 border:1px #ccc solid; 
 }
 
-h3 {
-margin:0;
-margin-top: 3px;
-}
-
-ul {
-  padding: 0;
-}
-
 @media only screen and (min-width: 1200px) {
 #page-container {
 position: absolute;
@@ -56,21 +37,7 @@ left: 0px;
 right: 0px;
 top: 20px;
 bottom: 20px;   }
-
-
-#vidwrap {
-
-  top:160px;
 }
-
-h3 {
-position: relative;
-top: -38px;
-height: 0;
-}
-}
-
-
 </style>
 
 <?php 
@@ -86,17 +53,11 @@ $ip =&getIP();
 <div id="main-container">
 	<div id="main" class="wrapper clearfix"> 
  
- <?php
-$xmlInfoVideo    = simplexml_load_file("http://gdata.youtube.com/feeds/api/videos/".$v."?v=2&fields=title");
-
-foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string) $title); }
-?>
-<h3><?php echo $videoTitle;?> </h3>
-
-
-		
-<div id="controlheader">		
  
+
+			
+<div id="controlheader">		
+    
   <fieldset class="search"> 
       <form method="post" name="search" action="<?php echo $folder;?>php/db.php">
       <?php focusjs('search','search')?>
@@ -107,59 +68,24 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
       </form>
   </fieldset>
 
-
-
-
 <ul class="controls">  
-<?php 
-
-if ($ios != true){
-
-?>
-
   <div class="control-shadow">
     <li>
     <?php focusjs('play','control-link')?>
       <div id="play" class="control-link">
-        <a href="#" <?php focus(play)?> > 
+        <a href="#" <?php focus(play)?> onclick="playPauseToggle()"> 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br>Pause / Play
         </a>
       </div>
     </li>
-  </div> 
-
-  <div class="control-shadow">
-    <li>
-    <?php focusjs('volup','control-link')?>
-      <div id="volup" class="control-link">
-        <a href="#" <?php focus(volup)?> > 
-          <img src="../img/volume_up.png" alt="Volume Up">
-          </br>Volume Up
-        </a>
-      </div>
-    </li>
-  </div> 
-
-    <div class="control-shadow">
-    <li>
-    <?php focusjs('voldown','control-link')?>
-      <div id="voldown" class="control-link">
-        <a href="#" <?php focus(voldown)?> > 
-          <img src="../img/volume_down.png" alt="Volume Down">
-          </br>Volume Down
-        </a>
-      </div>
-    </li>
-  </div> 
+  </div>
   
-  <?php } ?>
-
   <div class="control-shadow">
     <li>
     <?php focusjs('repeat','control-link')?>
       <div id="repeat" class="control-link">
-       <a href="#"  <?php focus(repeat)?> onClick="window.location.reload()">
+       <a href="#" <?php focus(repeat)?> onClick="window.location.reload()">
         <img src="../img/media_repeat.png" alt="Play Again">
         </br>Play Again
         </a>
@@ -219,105 +145,37 @@ if ($ip=="195.194.187.26") {
   
 </ul>
 
-
-
  </div>
 
 
-<!--   <div id=vidwrap>      
+  <div id=vidwrap>      
  	
     <div id="videoDiv">Loading...</div>
 
-  </div> -->
+  </div>
 
 			
 		</div> <!--  #main -->
-	</div> <!-- #main-container  -->
-
-
-
-
-<div id="vidwrap" tabindex="-1">
-
-   <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
-    <iframe id="video" tabindex="-1" type="text/html" width="100%" height="100%"
-  src="//www.youtube.com/embed/<?php echo $v;?>?enablejsapi=1&html5=1&autohide=1&autoplay=1&iv_load_policy=3&showinfo=0&rel=0&modestbranding=1&vq=large"
-  frameborder="0"></iframe>
-
-    <script>
-
-// global variable for the player
-var player;
-
-// this function gets called when API is ready to use
-function onYouTubePlayerAPIReady() {
-  // create the global player from the specific iframe (#video)
-  player = new YT.Player('video', {
-    events: {
-      // call this function when player is ready to use
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-}
-
-
-function onPlayerReady(event) {
-
-         
-    $("#play a").click(pauseVideo);
-
- $("#volup").click( function(){
-        if(player){
-            var currentVol = player.getVolume();
-            if((currentVol+20) <= 100){
-                player.setVolume(currentVol+20);
-                          }
-        }
-    });
-
-    $("#voldown").click( function(){
-        if(player){
-            var currentVol = player.getVolume();
-            if((currentVol-20) >= 0){
-                player.setVolume(currentVol-20);
-            }
-        }
-    });
-        
-}
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-
-        $("#play a").click(pauseVideo);
-          
-        }
-
-        else {
-
-            $("#play a").click(playVideo);
-
-        }
+	</div><!--  #main-container -->  
+  
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">google.load("swfobject", "2.1");</script>    
+    <script type="text/javascript">
+  
+              
+     // The "main method" of this sample. Called when someone clicks "Run".
+      function loadPlayer() {
+        // Lets Flash from another domain call JavaScript
+        var params = { allowScriptAccess: "always" };
+        // The element id of the Flash embed
+        var atts = { id: "ytPlayer" };
+        // All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
+        swfobject.embedSWF("http://www.youtube.com/e/<?php echo $v;?>" + 
+                           "?showinfo=0&autoplay=1&autohide=1&showsearch=0&rel=1&showsearch=0&enablejsapi=1&playerapiid=player1", 
+                           "videoDiv", "100%", "100%", "8", null, null, params, atts);
       }
-      
-
-       function pauseVideo() {
-        player.pauseVideo();
+      function _run() {
+        loadPlayer();
       }
-
-
-           function playVideo() {
-        player.playVideo();
-      }
-
-
-
-// Inject YouTube API script
-var tag = document.createElement('script');
-tag.src = "//www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-</script>
-
-    </div>
-
+      google.setOnLoadCallback(_run);
+    </script>
