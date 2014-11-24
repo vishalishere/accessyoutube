@@ -1,14 +1,4 @@
-<?php
-
-include("Mobile_Detect.php");
-$detect = new Mobile_Detect();
-if ($detect->isMobile()) {
-    echo 'mobile browser detected';
-}
-
-//separate content page for the play module - as defined in play/index.php
-
-?>
+<!-- separate content page for the play module - as defined in play/index.php -->
 
 <style>
 html,body {
@@ -54,7 +44,18 @@ $s = $_GET["s"];
 $ip =&getIP();
 
 
+
+
+include("Mobile_Detect.php");
+$detect = new Mobile_Detect();
+if ($detect->isMobile()) {
+    echo 'mobile browser detected';
+}
+
+
+else {
 ?>
+
 
 <div id="main-container">
 	<div id="main" class="wrapper clearfix"> 
@@ -185,3 +186,9 @@ if ($ip=="195.194.187.26") {
       }
       google.setOnLoadCallback(_run);
     </script>
+
+    <?php
+
+  }
+
+  ?>
