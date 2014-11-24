@@ -92,7 +92,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
     </li>
   </div> 
 
-  <div class="control-shadow">
+  <!-- <div class="control-shadow">
     <li>
     <?php focusjs('volup','control-link')?>
       <div id="volup" class="control-link">
@@ -114,7 +114,7 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
         </a>
       </div>
     </li>
-  </div> 
+  </div>  -->
   
 
   <div class="control-shadow">
