@@ -31,9 +31,7 @@ $id = preg_replace("/[^A-Za-z0-9]/", "", $id);
 //video search results
 function getyt($v) {
 
-
 global $api;
-
 global $country_code;
 //string explained: 
   //format=5 stops video results returning that aren't allow to be played embedded on another website
@@ -45,7 +43,7 @@ $feedURL =
 			
 $sxml = simplexml_load_file($feedURL);   
     
-
+$n=1;
 if( empty($sxml))
    {
 			echo "Youtube is not returning results at the moment - please try again later";
@@ -84,14 +82,17 @@ if( empty($sxml))
              
         // print record
 
-echo "<div class=\"shadow\"><li><div id=\"$vidid\" class=\"vidlink\">\n";
-focusjs($vidid,'vidlink'); 
-echo "<a ";
-  focus($vidid)  ;
+echo "<div class=\"col-lg-3 col-md-4 col-sm-6 vids\">
+
+<div class=\" vidlink drop-shadow lifted\">";
+
+echo "<a id=\"vid\" ";
+ 
 echo	"href=\"{$watch}\">
-        <img src=\"$thumbnail\" alt=\"{$media->group->title}\"/><br>{$media->group->title}</a>\n";
-        echo "</div></li></div>\n"; 
-	
+        <img class=\"img-responsive\" src=\"$thumbnail\" alt=\"{$media->group->title}\"/><div class=\"link-text\"><p>{$media->group->title}</p></div></a>\n";
+
+ echo '</div></div>';
+
       }
 
   }
@@ -144,19 +145,11 @@ if( empty($sxml))
              
         // print record
         
- echo "<div class=\"control-shadow\">
-     <li>";
-     focusjs('next','control-link');
-      echo "<div id=\"next\" class=\"control-link\">
-        <a";
-        focus(next);
-        echo "href=\"{$watch}&s={$s}\">
+      echo "
+        <a href=\"{$watch}&s={$s}\">
           <img src=\"../img/media_next.png\" alt=\"Next Video: {$media->group->title}\">
           <br>Next Video
-        </a>
-      </div>
-    </li>
-  </div>"; 
+        </a>"; 
 				 
       }
       

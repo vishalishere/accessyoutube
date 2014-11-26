@@ -2,7 +2,7 @@
 
 <?php if ($front){ ?>
 
-<footer class="footer visible-lg-block">
+<footer class="footer visible-md-block visible-lg-block">
       <div class="container">
       <div class="row">
 

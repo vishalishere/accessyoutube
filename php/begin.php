@@ -34,6 +34,13 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+  <!-- scripts concatenated and minified via build script -->
+  <script src="<?php echo $folder;?>js/plugins.js"></script>
+  <script src="<?php echo $folder;?>js/script.js"></script>
+  <!-- end scripts -->
 
 </head>
 <body OnLoad="document.search.v.focus();">

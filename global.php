@@ -1,7 +1,7 @@
 <?php 
 
 
-
+error_reporting(!E_ALL);
 //global file used for includes and file location references
 //needs some work...
 
@@ -48,6 +48,11 @@ if(strpos($_SERVER['HTTP_HOST'],$_SERVER['SERVER_NAME'])===false){
 
 require_once ($root.'php/config.php');
 
+require_once($root."php/Mobile_Detect.php");
+$detect = new Mobile_Detect();
+
+$mobile='';
+if ($detect->isMobile()) {$mobile=true;}
 
 if ($in_root=='yes'){$folder='/';}
 

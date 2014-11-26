@@ -1,4 +1,3 @@
-<!-- separate content page for the play module - as defined in play/index.php -->
 
 <style>
 html,body {
@@ -7,33 +6,24 @@ html,body {
 	height:100%; /* needed for page min-height */
 }
 
-#page{
-  max-width: 1140px;
+.main-body{
   position:relative; /* needed for footer positioning*/
 	margin:0 auto; /* center, not in IE5 */ 
 	height:auto !important; /* real browsers */
 	height:100%; /* IE6: treated as min-height*/
 	min-height:100%; /* real browsers */
+  max-height:100%; /* real browsers */
+  overflow: hidden;
 }
 
-#page-container {
-position: absolute;
-left: 0px;
-right: 0px;
-top: 0px;
-bottom: 4px;  
-background: #dde url(/img/center-highlight-opacity.png) no-repeat center -400px fixed;
-border:1px #ccc solid; 
-}
 
 @media only screen and (min-width: 1200px) {
-#page-container {
-position: absolute;
-left: 0px;
-right: 0px;
-top: 20px;
-bottom: 20px;   }
+body{
+padding: 20px;
+   }
 }
+
+
 </style>
 
 <?php 
@@ -47,8 +37,6 @@ $ip =&getIP();
 
     
 ?>
-<div id="main-container">
-  <div id="main" class="wrapper clearfix"> 
  
  <?php
 $xmlInfoVideo    = simplexml_load_file("http://gdata.youtube.com/feeds/api/videos/".$v."?v=2&fields=title");
@@ -58,31 +46,32 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
 <h3><?php echo $videoTitle;?> </h3>
 
 
-    
-<div id="controlheader">    
+  
  
-  <fieldset class="search"> 
-      <form method="post" name="search" action="<?php echo $folder;?>php/db.php">
-      <?php focusjs('search','search')?>
-        <input <?php focus(search)?>  autocomplete="off" type="text" title="type here" id="<?php echo $big;?>search" class="<?php echo $big;?>search" label="type here" name="v" placeholder="type here..." />
-        <input type="hidden" name="db" value="submit">
-        <?php focusjs('btn','btn')?>
-        <input <?php focus(btn)?> type="submit" id="<?php echo $big;?>btn" class="<?php echo $big;?>btn" value="search" />  
-      </form>
-  </fieldset>
+<div class="container-fluid">
+  <div class="row form">
+  <form role="form" method="post" name="search" action="<?php echo $folder;?>php/db.php">
+  <?php focusjs('search','search')?><?php focusjs('btn','btn')?>
+  <div class="col-md-3 col-sm-1"></div>
+  <div class="col-md-4 col-sm-8"><input class="search" <?php focus('search')?> autocomplete="off" type="text" title="type here" id="search" name="v" placeholder="type here..." /></div>
+  <div class="col-md-2 col-sm-2"><input <?php focus('btn')?> type="submit" id="btn" class="btn" value="search" />  </div>
+  <div class="col-md-3 col-sm-1"></div>
+  </form>
+  </div>
+  </div>
 
 <?php
 
 //HTML5 for mobile devices
-include("Mobile_Detect.php");
-$detect = new Mobile_Detect();
-if ($detect->isMobile()) {
+
+if ($mobile) {
 
 ?>
 
-<ul class="controls">  
 
-  <div class="control-shadow">
+
+
+
     <li>
     <?php focusjs('play','control-link')?>
       <div id="play" class="control-link">
@@ -188,20 +177,10 @@ if ($ip=="195.194.187.26") {
  </div>
 
 
-<!--   <div id=vidwrap>      
   
-    <div id="videoDiv">Loading...</div>
-
-  </div> -->
-
-      
-    </div> <!--  #main -->
-  </div> <!-- #main-container  -->
 
 
-
-
-<div id="vidwrap" tabindex="-1">
+<div class="vidwrap" tabindex="-1">
 
    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
     <iframe id="video" tabindex="-1" type="text/html" width="100%" height="100%"
@@ -293,6 +272,31 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 else {
 ?>
 
+<div class="container-fluid">
+  <div class="row center-block">
+<div class="col-xs-2 center-block"></div> 
+<div class="col-xs-2 center-block"><a href="#" onclick="playPauseToggle()"> 
+          <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
+          </br>Pause / Play
+        </a></div> 
+<div class="col-xs-2 center-block"> <a href="#" onClick="window.location.reload()">
+        <img src="../img/media_repeat.png" alt="Play Again">
+        </br>Play Again
+        </a></div> 
+<div class="col-xs-2 center-block"><?php 
+//get next related video link
+
+relatedyt($v,$s);
+
+$s = str_replace(" ", "+", $s);  ?></div> 
+<div class="col-xs-2 center-block"><a href="../<?php echo"$s"; ?>">
+          <img src="../img/media_previous.png" alt="Back to choices">
+          </br>Back
+        </a></div> 
+<div class="col-xs-2 center-block"></div> 
+</div>
+</div>
+
 
 <ul class="controls">  
   <div class="control-shadow">
@@ -371,10 +375,9 @@ if ($ip=="195.194.187.26") {
   
 </ul>
 
- </div>
 
 
-  <div id=vidwrap>      
+  <div class="vidwrap">      
  	
     <div id="videoDiv">Loading...</div>
 

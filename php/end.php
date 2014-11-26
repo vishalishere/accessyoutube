@@ -1,11 +1,5 @@
   </div> 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
-
-  <!-- scripts concatenated and minified via build script -->
-  <script src="<?php echo $folder;?>js/plugins.js"></script>
-  <script src="<?php echo $folder;?>js/script.js"></script>
-  <!-- end scripts -->
+  
 
   <script type="text/javascript">
 var _gaq = _gaq || [];
