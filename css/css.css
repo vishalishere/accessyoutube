@@ -93,6 +93,7 @@ h3 {font-size: 1em; white-space: nowrap; overflow: hidden;  text-overflow:ellips
 
 .controls {display: none}
 
+.vid-controls img {max-height: 30px}
 .vidwrap {
 position: absolute;
 left: 0px;
@@ -102,6 +103,7 @@ width:100%;
 top: 190px;
 
 }
+
 
 
 @media (min-width: 768px) { 

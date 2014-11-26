@@ -33,9 +33,6 @@ $s = $_GET["s"];
 
 $ip =&getIP();
 
-
-
-    
 ?>
  
  <?php
@@ -43,9 +40,9 @@ $xmlInfoVideo    = simplexml_load_file("http://gdata.youtube.com/feeds/api/video
 
 foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string) $title); }
 ?>
+
+
 <h3><?php echo $videoTitle;?> </h3>
-
-
   
  
 <div class="container-fluid">
@@ -60,28 +57,31 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
   </div>
   </div>
 
-<?php
 
-//HTML5 for mobile devices
-
-if ($mobile) {
-
-?>
-
-
-
-
-
-    <li>
-    <?php focusjs('play','control-link')?>
-      <div id="play" class="control-link">
-        <a href="#" <?php focus(play)?> > 
+<div class="container-fluid">
+  <div class="row vid-controls">
+<div class="col-xs-2 center-block"></div> 
+<div class="col-xs-2 center-block"><a id="play" href="#" onclick="playPauseToggle()"> 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br>Pause / Play
-        </a>
-      </div>
-    </li>
-  </div> 
+        </a></div> 
+<div class="col-xs-2 center-block"> <a href="#" onClick="window.location.reload()">
+        <img src="../img/media_repeat.png" alt="Play Again">
+        </br>Play Again
+        </a></div> 
+<div class="col-xs-2 center-block"><?php 
+//get next related video link
+
+relatedyt($v,$s);
+
+$s = str_replace(" ", "+", $s);  ?></div> 
+<div class="col-xs-2 center-block"><a href="../<?php echo"$s"; ?>">
+          <img src="../img/media_previous.png" alt="Back to choices">
+          </br>Back
+        </a></div> 
+<div class="col-xs-2 center-block"></div> 
+</div>
+</div>
 
   <!-- <div class="control-shadow">
     <li>
@@ -106,40 +106,7 @@ if ($mobile) {
       </div>
     </li>
   </div>  -->
-  
 
-  <div class="control-shadow">
-    <li>
-    <?php focusjs('repeat','control-link')?>
-      <div id="repeat" class="control-link">
-       <a href="#"  <?php focus(repeat)?> onClick="window.location.reload()">
-        <img src="../img/media_repeat.png" alt="Play Again">
-        </br>Play Again
-        </a>
-      </div>
-    </li>
-  </div> 
-
-
-<?php 
-//get next related video link
-
-relatedyt($v,$s);
-
-$s = str_replace(" ", "+", $s);    
-?>
-
-  <div class="control-shadow">
-    <li>
-    <?php focusjs('back','control-link')?>
-      <div id="back" class="control-link">
-        <a <?php focus(back)?> href="../<?php echo"$s"; ?>">
-          <img src="../img/media_previous.png" alt="Back to choices">
-          </br>Back
-        </a>
-      </div>
-    </li>
-  </div> 
 
 
  <?php 
@@ -162,22 +129,13 @@ if ($ip=="195.194.187.26") {
     </li>
   </div> 
   
-  
-  <?php 
-  
-  }  
- 
- ?>   
-  
-  
-</ul>
+<?php
 
+}
+//HTML5 for mobile devices
 
-
- </div>
-
-
-  
+if ($mobile) {
+?>
 
 
 <div class="vidwrap" tabindex="-1">
@@ -203,7 +161,6 @@ function onYouTubePlayerAPIReady() {
     }
   });
 }
-
 
 function onPlayerReady(event) {
 
@@ -263,119 +220,13 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 </script>
 
     </div>
+
 <?php
 
 }
 
 //flash method for desktop machines - required to work within the Grid 2 (No way to detect Grid 2 browsing unfortunately)
-
-else {
-?>
-
-<div class="container-fluid">
-  <div class="row center-block">
-<div class="col-xs-2 center-block"></div> 
-<div class="col-xs-2 center-block"><a href="#" onclick="playPauseToggle()"> 
-          <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
-          </br>Pause / Play
-        </a></div> 
-<div class="col-xs-2 center-block"> <a href="#" onClick="window.location.reload()">
-        <img src="../img/media_repeat.png" alt="Play Again">
-        </br>Play Again
-        </a></div> 
-<div class="col-xs-2 center-block"><?php 
-//get next related video link
-
-relatedyt($v,$s);
-
-$s = str_replace(" ", "+", $s);  ?></div> 
-<div class="col-xs-2 center-block"><a href="../<?php echo"$s"; ?>">
-          <img src="../img/media_previous.png" alt="Back to choices">
-          </br>Back
-        </a></div> 
-<div class="col-xs-2 center-block"></div> 
-</div>
-</div>
-
-
-<ul class="controls">  
-  <div class="control-shadow">
-    <li>
-    <?php focusjs('play','control-link')?>
-      <div id="play" class="control-link">
-        <a href="#" <?php focus(play)?> onclick="playPauseToggle()"> 
-          <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
-          </br>Pause / Play
-        </a>
-      </div>
-    </li>
-  </div>
-  
-  <div class="control-shadow">
-    <li>
-    <?php focusjs('repeat','control-link')?>
-      <div id="repeat" class="control-link">
-       <a href="#" <?php focus(repeat)?> onClick="window.location.reload()">
-        <img src="../img/media_repeat.png" alt="Play Again">
-        </br>Play Again
-        </a>
-      </div>
-    </li>
-  </div> 
-
-
-<?php 
-//get next related video link
-
-relatedyt($v,$s);
-
-$s = str_replace(" ", "+", $s);    
-?>
-
-  <div class="control-shadow">
-    <li>
-    <?php focusjs('back','control-link')?>
-      <div id="back" class="control-link">
-        <a <?php focus(back)?> href="../<?php echo"$s"; ?>">
-          <img src="../img/media_previous.png" alt="Back to choices">
-          </br>Back
-        </a>
-      </div>
-    </li>
-  </div> 
-
-
- <?php 
-
-
-//custom display for institution require close window button 
-if ($ip=="195.194.187.26") {
- //if ($ip=="195.72.35.110") {
-?>
-
-  <div class="control-shadow">
-   <li>
-    <?php focusjs('close','control-link')?>
-      <div id="close" class="control-link">
-        <a <?php focus(close)?> href="" onclick="closeme();">
-          <img src="../img/media_close.png" alt="Close Window">
-          </br>Close Window
-        </a>
-      </div>
-    </li>
-  </div> 
-  
-  
-  <?php 
-  
-  }  
- 
- ?>   
-  
-  
-</ul>
-
-
+else { ?>
 
   <div class="vidwrap">      
  	
@@ -384,8 +235,8 @@ if ($ip=="195.194.187.26") {
   </div>
 
 			
-		</div> <!--  #main -->
-	</div><!--  #main-container -->  
+		</div> 
+	</div>
   
     <script src="http://www.google.com/jsapi" type="text/javascript"></script>
     <script type="text/javascript">google.load("swfobject", "2.1");</script>    
