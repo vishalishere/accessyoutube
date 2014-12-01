@@ -22,7 +22,10 @@
  
   <!-- Load up some favicons -->
   <link rel="icon" href="/favicon.ico?nocache" type="image/x-icon" />
+
   <link rel="shortcut icon" href="/favicon.ico?nocache" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="<?php echo $folder;?>img/apple-touch-icon.png">
+
    
   <!-- adaptive images -->
   <script>document.cookie='resolution='+Math.max(screen.width,screen.height)+'; path=/';</script>
