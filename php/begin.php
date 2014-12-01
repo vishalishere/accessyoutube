@@ -24,7 +24,7 @@
   <link rel="icon" href="/favicon.ico?nocache" type="image/x-icon" />
 
   <link rel="shortcut icon" href="/favicon.ico?nocache" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="<?php echo $folder;?>img/apple-touch-icon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?nocache">
 
    
   <!-- adaptive images -->
