@@ -1,4 +1,4 @@
-*{outline:none; text-decoration: none ; text-align: center; -webkit-appearance : none !important;}
+*{outline:none; text-decoration: none ; text-align: center; -webkit-appearance : none !important; }
 input#search, input#bigsearch  {text-align:left;}
 
 
@@ -15,7 +15,7 @@ div.form div{
 }
 
 
-
+input {padding: 0 !important;}
 a:focus, a:hover, p { text-decoration: none ;!IMPORTANT}
 
 
