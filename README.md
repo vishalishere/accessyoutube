@@ -5,7 +5,7 @@
 #### Created by Mike Thrussell at Henshaws College
 
 
-Built on a custom PHP framework adapted from HTML5 Boilerplate (and Twitter Bootstrap) to ensure cross-browser compatibility
+Built on a custom PHP framework adapted from HTML5 Boilerplate and Twitter Bootstrap to ensure cross-browser compatibility
 
 
 Feel free to use however you like
