@@ -1,4 +1,4 @@
-*{outline:none; text-decoration: none ; text-align: center;}
+*{outline:none; text-decoration: none ; text-align: center; -webkit-appearance : none !important;}
 input#search, input#bigsearch  {text-align:left;}
 
 
