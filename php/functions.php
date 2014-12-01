@@ -146,9 +146,9 @@ if( empty($sxml))
         // print record
         
       echo "
-        <a href=\"{$watch}&s={$s}\">
+        <a class=\"controlLink\" href=\"{$watch}&s={$s}\">
           <img src=\"../img/media_next.png\" alt=\"Next Video: {$media->group->title}\">
-          <br>Next Video
+          <br><p>Next Video</p>
         </a>"; 
 				 
       }

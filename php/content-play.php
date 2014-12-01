@@ -1,30 +1,5 @@
 
-<style>
-html,body {
-	margin:0;
-	padding:0;
-	height:100%; /* needed for page min-height */
-}
 
-.main-body{
-  position:relative; /* needed for footer positioning*/
-	margin:0 auto; /* center, not in IE5 */ 
-	height:auto !important; /* real browsers */
-	height:100%; /* IE6: treated as min-height*/
-	min-height:100%; /* real browsers */
-  max-height:100%; /* real browsers */
-  overflow: hidden;
-}
-
-
-@media only screen and (min-width: 1200px) {
-body{
-padding: 20px;
-   }
-}
-
-
-</style>
 
 <?php 
   
@@ -58,27 +33,51 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
   </div>
 
 
-<div class="container-fluid">
+
+<script>
+
+$( document ).ready(function() {
+ 
+     $(".controlLink").bind("mouseenter focusin focus", function() {
+    $(this).closest(".dropshadow").removeClass("control")
+    $(this).closest(".dropshadow").addClass("controlfocus"); 
+ });
+ 
+   $(".controlLink").bind("mouseleave focusout blur", function() {
+    $(this).closest(".dropshadow").removeClass("controlfocus"); 
+    $(this).closest(".dropshadow").addClass("control")
+ }); 
+ 
+});
+
+
+
+
+</script>  
+
+<div class="container-fluid hidden-xs">
   <div class="row vid-controls">
 <div class="col-xs-2 center-block"></div> 
-<div class="col-xs-2 center-block"><a id="play" href="#" onclick="playPauseToggle()"> 
+<div class="col-xs-2 center-block">
+
+<div class="dropshadow lifted control"><a id="play" class="controlLink" href="#" onclick="playPauseToggle()"> 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
-          </br>Pause / Play
-        </a></div> 
-<div class="col-xs-2 center-block"> <a href="#" onClick="window.location.reload()">
+          </br><p>Pause / Play</p>
+        </a></div> </div>
+<div class="col-xs-2 center-block"> <div class="dropshadow lifted control"><a href="#" class="controlLink" onClick="window.location.reload()">
         <img src="../img/media_repeat.png" alt="Play Again">
-        </br>Play Again
-        </a></div> 
-<div class="col-xs-2 center-block"><?php 
+        </br><p>Play Again</p>
+        </a></div> </div>
+<div class="col-xs-2 center-block"><div class="dropshadow lifted control"><?php 
 //get next related video link
 
 relatedyt($v,$s);
 
-$s = str_replace(" ", "+", $s);  ?></div> 
-<div class="col-xs-2 center-block"><a href="../<?php echo"$s"; ?>">
+$s = str_replace(" ", "+", $s);  ?></div> </div>
+<div class="col-xs-2 center-block"><div class="dropshadow lifted control"><a class="controlLink" href="../<?php echo"$s"; ?>">
           <img src="../img/media_previous.png" alt="Back to choices">
-          </br>Back
-        </a></div> 
+          </br><p>Back</p>
+        </a></div> </div>
 <div class="col-xs-2 center-block"></div> 
 </div>
 </div>
@@ -113,7 +112,7 @@ $s = str_replace(" ", "+", $s);  ?></div>
 
 
 //custom display for institution require close window button 
-if ($ip=="195.194.187.26") {
+if ($ip=="195.194.187.26x") {
  //if ($ip=="195.72.35.110") {
 ?>
 
@@ -165,7 +164,7 @@ function onYouTubePlayerAPIReady() {
 function onPlayerReady(event) {
 
          
-    $("#play a").click(pauseVideo);
+    $("#play").click(pauseVideo);
 
  // $("#volup").click( function(){
  //        if(player){
@@ -189,13 +188,13 @@ function onPlayerReady(event) {
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING) {
 
-        $("#play a").click(pauseVideo);
+        $("#play").click(pauseVideo);
           
         }
 
         else {
 
-            $("#play a").click(playVideo);
+            $("#play").click(playVideo);
 
         }
       }
@@ -228,7 +227,7 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //flash method for desktop machines - required to work within the Grid 2 (No way to detect Grid 2 browsing unfortunately)
 else { ?>
 
-  <div class="vidwrap">      
+  <div class="vidwrap" tabindex="-1">      
  	
     <div id="videoDiv">Loading...</div>
 

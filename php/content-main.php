@@ -71,13 +71,13 @@ $v = urlencode($v);
 $( document ).ready(function() {
  
      $(vid).bind("mouseenter focusin focus", function() {
-    $(this).parent().removeClass("vidlink")
-    $(this).parent().addClass("vidlinkfocus"); 
+    $(this).closest(".drop-shadow").removeClass("vidlink")
+    $(this).closest(".drop-shadow").addClass("vidlinkfocus"); 
  });
  
    $(vid).bind("mouseleave focusout blur", function() {
-    $(this).parent().removeClass("vidlinkfocus"); 
-    $(this).parent().addClass("vidlink")
+    $(this).closest(".drop-shadow").removeClass("vidlinkfocus"); 
+    $(this).closest(".drop-shadow").addClass("vidlink")
  }); 
  
 });

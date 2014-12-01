@@ -41,7 +41,34 @@
   <script src="<?php echo $folder;?>js/plugins.js"></script>
   <script src="<?php echo $folder;?>js/script.js"></script>
   <!-- end scripts -->
+<?php if($play) { ?>
+<style>
+
+.page { 
+
+  position: relative;
+  margin:0 auto; /* center, not in IE5 */ 
+  height:auto !important; /* real browsers */
+  height:100%; /* IE6: treated as min-height*/
+  min-height:100%; /* real browsers */
+  max-height:100%; /* real browsers */
+  overflow: hidden;}
+
+.main-body{
+position: absolute;
+top: 0px;
+bottom: 0px;
+left: 0px;
+right: 0px;
+
+}
+
+
+</style>
+
+<?php } ?>
 
 </head>
 <body OnLoad="document.search.v.focus();">
+<div class="page">
 <div class="container main-body">
