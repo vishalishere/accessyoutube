@@ -69,6 +69,6 @@ right: 0px;
 <?php } ?>
 
 </head>
-<body OnLoad="document.search.v.focus();">
+<body <?php if (!$mobile){ echo'OnLoad="document.search.v.focus();"';}?>>
 <div class="page">
 <div class="container main-body">
