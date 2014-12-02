@@ -21,7 +21,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
 
 
-  <link rel="stylesheet" href="<?php echo $folder;?>css/css.php">
+  <!-- <link rel="stylesheet" href="<?php echo $folder;?>css/css.php"> -->
+  <link rel="stylesheet" href="<?php echo $folder;?>css/bootstrap.css">
+  <link rel="stylesheet" href="<?php echo $folder;?>css/css.css">
+  
+
  
   <!-- Load up some favicons -->
   <link rel="icon" href="/favicon.ico?nocache" type="image/x-icon" />
