@@ -89,7 +89,7 @@ echo "<div class=\"col-lg-3 col-md-4 col-sm-6 vids\">
 echo "<a id=\"vid\" ";
  
 echo	"href=\"{$watch}\">
-        <img class=\"img-responsive\" src=\"$thumbnail\" alt=\"{$media->group->title}\"/><div class=\"link-text\"><p>{$media->group->title}</p></div></a>\n";
+        <img class=\"img-responsive\" src=\"$thumbnail\" alt=\"{$media->group->title}\"/><p>{$media->group->title}</p></a>\n";
 
  echo '</div></div>';
 

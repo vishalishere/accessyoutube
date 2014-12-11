@@ -116,8 +116,6 @@ h3 {font-size: 1.6em;}
 	#vid img {max-height: 150px; margin: auto; float: none;}
 	p {text-align: center; padding:0;}
 
-.link-text { height: 55px; overflow: hidden;}
-
 .form {margin-bottom: 20px;}
 
 	a#vid {font-size:16px; padding-top:3px; color: #00e;}
@@ -131,6 +129,7 @@ h3 {font-size: 1.6em;}
 
 
      .drop-shadow {
+            overflow: hidden;
             position:relative;
             float:left;
         	width: 100%;
