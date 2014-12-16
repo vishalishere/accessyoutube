@@ -29,6 +29,8 @@ while (strpos($v,'  ') !== false) {$v = str_replace('  ', ' ', $v);}
 //if first or last character is a space, remove it
 
 $v= ltrim ($v,' ');  $v= rtrim ($v,' ');
+//disallow slashes in original search request
+$v = str_replace('/', '+', $v);
 
 //allow spec chars in string
 $v = addslashes($v);
@@ -77,6 +79,8 @@ $v = str_replace(' ', '+', $v);
 
 //remove slashes
 $v  = stripslashes ($v);
+
+
 
 header("Location: $folder$v"); 
 
