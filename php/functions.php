@@ -31,56 +31,22 @@ $id = preg_replace("/[^A-Za-z0-9]/", "", $id);
 //video search results
 function getyt($v) {
 
-global $api;
+global $v3api;
 global $country_code;
 //string explained: 
-  //format=5 stops video results returning that aren't allow to be played embedded on another website
   //Country restriction is to stop youtube returning video that aren't allowed to be played due to geographic restrictions
-$feedURL = 
-"http://gdata.youtube.com/feeds/api/videos?vq={$v}&max-results=12&format=5&orderby=relevance&restriction=".$country_code."&safesearch=strict&key=".$api;
-  
-// read feed into SimpleXML object
-			
-$sxml = simplexml_load_file($feedURL);   
-    
-$n=1;
-if( empty($sxml))
-   {
-			echo "Youtube is not returning results at the moment - please try again later";
-     return false;
-   }
+$url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='.$v.'&maxResults=12&order=relevance&safeSearch=strict&type=video&videoDimension=2d&regionCode='.$country_code.'&videoEmbeddable=true&videoSyndicated=true&key='.$v3api;
 
-// iterate over entries in resultset
-// print each entry's details
-      foreach ($sxml->entry as $entry) {
-        // get nodes in media: namespace for media information
-        $media = $entry->children('http://search.yahoo.com/mrss/');
-        
-        // get video player URL
-        $attrs = $media->group->player->attributes();
-        $watch = $attrs['url']; 
-        
-				//sort url out
-				
-				$watch = str_replace("&feature=youtube_gdata_player", "&s=$v", $watch);
-				$watch = str_replace("http://", "play?v=http://", $watch);
-				$watch = str_replace("http://www.youtube.com/watch?v=", "", $watch);
-	
-			
-        // get video thumbnail
-        $attrs = $media->group->thumbnail[0]->attributes();
-        $thumbnail = $attrs['url']; 
-        
-                // get video ID
-        $arr = explode('/',$entry->id);
-        $id = $arr[count($arr)-1];
-        
-	    $vidid = $watch;   
-        $vidid = preg_replace("/[^A-Za-z0-9]/", "", $vidid);
-        $vidid = str_replace("playv", "", $vidid);
-        $vidid = str_replace("s".$v, "", $vidid);
-             
-        // print record
+$content = file_get_contents($url);
+$json = json_decode($content, true);
+
+foreach($json['items'] as $item) {
+    $vidId = $item['id']['videoId'];
+    $title = $item['snippet']['title'];
+    $thumb = $item['snippet']['thumbnails']['high']['url'];
+
+
+    $link= 'play/?v='.$vidId.'&amp;s='.$v;
 
 echo "<div class=\"col-lg-3 col-md-4 col-sm-6 vids\">
 
@@ -88,8 +54,8 @@ echo "<div class=\"col-lg-3 col-md-4 col-sm-6 vids\">
 
 echo "<a id=\"vid\" ";
  
-echo	"href=\"{$watch}\">
-        <img class=\"img-responsive\" src=\"$thumbnail\" alt=\"{$media->group->title}\"/><p>{$media->group->title}</p></a>\n";
+echo	"href=\"{$link}\">
+        <img class=\"img-responsive\" src=\"{$thumb}\" alt=\"{$title}\"/><p>$title</p></a>\n";
 
  echo '</div></div>';
 

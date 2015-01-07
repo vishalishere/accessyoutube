@@ -7,6 +7,7 @@ $email = 'xxxx';
 
 //get YouTube api from here: https://developers.google.com/youtube/registering_an_application
 global $api; $api = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+global $v3api; $v3api = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 
 //enter 2 char coutry code (GB, NL etc) - needed for filtering out geolocation blocked results
  global $country_code; $country_code = 'GB';
