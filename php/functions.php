@@ -52,14 +52,28 @@ foreach($json['items'] as $item) {
 
     $n++;
 
-echo "<div class=\"col-lg-3 col-md-4 col-sm-6 vids\">
 
-<div class=\" vidlink drop-shadow lifted\">";
+
+
+echo "<div class=\"col-lg-3 col-md-4 col-sm-6 vids\">";
+
+if ($n<=10){ $a=$n; 
+  if ($n==10){$a=0;}
+echo '<div class="accesskey"><p>'.$a.'</p></div>';}
+
+echo "<div class=\" vidlink drop-shadow lifted\">";
+
+
 
 echo "<a id=\"vid\" ";
  
-echo	"href=\"{$link}\">
-        <img class=\"img-responsive\" src=\"{$thumb}\" alt=\"{$title}\"/><p>$title</p></a>\n";
+echo	"href=\"{$link}\"><img class=\"img-responsive\" src=\"{$thumb}\" alt=\"{$title}\"";
+
+if ($a<10){echo 'accesskey="'.$a;}
+
+echo "\"/><p>$title</p></a>\n";
+
+
 
  echo '</div></div>';
 

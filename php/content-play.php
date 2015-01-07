@@ -31,8 +31,11 @@ foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string)
   <form role="form" method="post" name="search" action="<?php echo $folder;?>php/db.php">
   <?php focusjs('search','search')?><?php focusjs('btn','btn')?>
   <div class="col-md-3 col-sm-1"></div>
-  <div class="col-md-4 col-sm-8"><input class="search" <?php focus('search')?> autocomplete="off" type="text" title="type here" id="search" name="v" placeholder="type here..." /></div>
-  <div class="col-md-2 col-sm-2"><input <?php focus('btn')?> type="submit" id="btn" class="btn" value="search" />  </div>
+  <div class="col-md-4 col-sm-8"><input class="search" <?php focus('search')?> autocomplete="off" type="text" title="type here" id="search" name="v" placeholder="Type here..." accesskey="t"/></div>
+  <div class="col-md-2 col-sm-2">
+  <button <?php focus('btn')?> type="submit" id="btn" class="btn" value="search" accesskey="s"><p>Search</p></button>
+  <!-- <input <?php focus('btn')?> type="submit" id="btn" class="btn" value="search" accesskey="s"/>   -->
+  </div>
   <div class="col-md-3 col-sm-1"></div>
   </form>
   </div>
@@ -66,16 +69,16 @@ $( document ).ready(function() {
 <div class="col-xs-2 center-block"></div> 
 <div class="col-xs-2 center-block">
 
-<div class="dropshadow lifted control"><a id="play" class="controlLink" href="#" onclick="playPauseToggle()"> 
+<div class="dropshadow lifted control"><a accesskey="p" id="play" class="controlLink" href="#" onclick="playPauseToggle()"> 
           <img src="../img/media_play_pause_resume.png" alt="Pause / Play">
           </br><p>Pause / Play</p>
         </a></div> </div>
-<div class="col-xs-2 center-block"> <div class="dropshadow lifted control"><a href="#" class="controlLink" onClick="window.location.reload()">
-        <img src="../img/media_repeat.png" alt="Play Again">
-        </br><p>Play Again</p>
+<div class="col-xs-2 center-block"> <div class="dropshadow lifted control"><a href="#" accesskey="r" class="controlLink" onClick="window.location.reload()">
+        <img src="../img/media_repeat.png" alt="Repeat">
+        </br><p>Repeat</p>
         </a></div> </div>
 <div class="col-xs-2 center-block"><div class="dropshadow lifted control">
-<a class="controlLink" href="<?php echo"$next"; ?>">
+<a accesskey="n" class="controlLink" href="<?php echo"$next"; ?>">
  <img src="../img/media_next.png" alt="Next Video">
           </br><p>Next</p>
         </a>
@@ -84,7 +87,7 @@ $( document ).ready(function() {
 // relatedyt($v,$s);
 
  ?></div> </div>
-<div class="col-xs-2 center-block"><div class="dropshadow lifted control"><a class="controlLink" href="../<?php echo"$s"; ?>">
+<div class="col-xs-2 center-block"><div class="dropshadow lifted control"><a accesskey="b" class="controlLink" href="../<?php echo"$s"; ?>">
           <img src="../img/media_previous.png" alt="Back to choices">
           </br><p>Back</p>
         </a></div> </div>

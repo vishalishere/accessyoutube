@@ -18,8 +18,11 @@ if ($front){
   <form role="form" method="post" name="search" action="<?php echo $folder;?>php/db.php">
   <?php focusjs('bigsearch','bigsearch')?><?php focusjs('bigbtn','bigbtn')?>
   <div class="col-md-1 "></div>
-  <div class="col-md-8 col-sm-9"><input class="bigsearch" <?php focus('bigsearch')?> autocomplete="off" type="text" title="type here" id="bigsearch" name="v" placeholder="type here..." /></div>
-  <div class="col-md-2 col-sm-3"><input <?php focus('bigbtn')?> type="submit" id="bigbtn" class="bigbtn" value="search" />  </div>
+  <div class="col-md-8 col-sm-9"><input class="bigsearch" <?php focus('bigsearch')?> autocomplete="off" type="text" title="type here" id="bigsearch" name="v" placeholder="Type here..." accesskey="t"/></div>
+  <div class="col-md-2 col-sm-3">
+  <button <?php focus('bigbtn')?> type="submit" id="bigbtn" class="bigbtn" accesskey="s">Search</button>
+  <!-- <input <?php focus('bigbtn')?> type="submit" id="bigbtn" class="bigbtn" value="search" accesskey="s"/>   -->
+  </div>
   <div class="col-md-1 "></div>
   </form>
   </div>
@@ -53,8 +56,12 @@ $v = urlencode($v);
   <form role="form" method="post" name="search" action="<?php echo $folder;?>php/db.php">
   <?php focusjs('search','search')?><?php focusjs('btn','btn')?>
   <div class="col-md-3 col-sm-1"></div>
-  <div class="col-md-4 col-sm-8"><input class="search" <?php focus('search')?> autocomplete="off" type="text" title="type here" id="search" name="v" placeholder="type here..." /></div>
-  <div class="col-md-2 col-sm-2"><input <?php focus('btn')?> type="submit" id="btn" class="btn" value="search" />  </div>
+  <div class="col-md-4 col-sm-8"><input class="search" <?php focus('search')?> autocomplete="off" type="text" title="type here" id="search" name="v" placeholder="Type here..." accesskey="t"/></div>
+  <div class="col-md-2 col-sm-2">
+<button <?php focus('btn')?> type="submit" id="btn" class="btn" value="search" accesskey="s"><p>Search</p></button>
+  <!-- <input <?php focus('btn')?> type="submit" id="btn" class="btn" value="search" accesskey="s"/>   -->
+
+  </div>
   <div class="col-md-3 col-sm-1"></div>
   </form>
   </div>
