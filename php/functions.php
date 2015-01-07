@@ -40,13 +40,17 @@ $url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='.$v.'&maxRe
 $content = file_get_contents($url);
 $json = json_decode($content, true);
 
+$n=0;
+
 foreach($json['items'] as $item) {
     $vidId = $item['id']['videoId'];
     $title = $item['snippet']['title'];
     $thumb = $item['snippet']['thumbnails']['high']['url'];
 
 
-    $link= 'play/?v='.$vidId.'&amp;s='.$v;
+    $link= 'play/?v='.$vidId.'&amp;s='.$v.'&n='.$n;
+
+    $n++;
 
 echo "<div class=\"col-lg-3 col-md-4 col-sm-6 vids\">
 

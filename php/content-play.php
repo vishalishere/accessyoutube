@@ -5,6 +5,12 @@
   
 $v = $_GET["v"];
 $s = $_GET["s"];
+$n = $_GET["n"];
+$s = str_replace(" ", "+", $s); 
+
+$next = '../php/next.php?v='.$s;
+
+if (isset($n)){$next .= '&n='.$n;}
 
 $ip =&getIP();
 
@@ -68,12 +74,16 @@ $( document ).ready(function() {
         <img src="../img/media_repeat.png" alt="Play Again">
         </br><p>Play Again</p>
         </a></div> </div>
-<div class="col-xs-2 center-block"><div class="dropshadow lifted control"><?php 
-//get next related video link
+<div class="col-xs-2 center-block"><div class="dropshadow lifted control">
+<a class="controlLink" href="<?php echo"$next"; ?>">
+ <img src="../img/media_next.png" alt="Next Video">
+          </br><p>Next</p>
+        </a>
 
-relatedyt($v,$s);
+        <?php 
+// relatedyt($v,$s);
 
-$s = str_replace(" ", "+", $s);  ?></div> </div>
+ ?></div> </div>
 <div class="col-xs-2 center-block"><div class="dropshadow lifted control"><a class="controlLink" href="../<?php echo"$s"; ?>">
           <img src="../img/media_previous.png" alt="Back to choices">
           </br><p>Back</p>
