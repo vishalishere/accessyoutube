@@ -35,7 +35,8 @@ global $v3api;
 global $country_code;
 //string explained: 
   //Country restriction is to stop youtube returning video that aren't allowed to be played due to geographic restrictions
-$url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='.$v.'&maxResults=12&order=relevance&safeSearch=strict&type=video&videoDimension=2d&regionCode='.$country_code.'&videoEmbeddable=true&videoSyndicated=true&key='.$v3api;
+$url = 'https://www.googleapis.com/youtube/v3/search?part=snippet&q='.$v.'&regionCode='.$country_code.'&videoSyndicated=any&videoEmbeddable=true&videoDimension=2d&order=relevance&type=video&safeSearch=strict&maxResults=12&key='.$v3api;
+
 
 $content = file_get_contents($url);
 $json = json_decode($content, true);
