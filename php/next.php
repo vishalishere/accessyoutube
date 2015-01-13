@@ -3,6 +3,7 @@
 require_once ('../global.php');
 
 $v = $_GET["v"];
+$v = str_replace(' ', '+', $v);
 
 $n = $_GET["n"];
 
@@ -17,7 +18,6 @@ $json = json_decode($content, true);
     $vidId = $json['items'][$n]['id']['videoId'];
 
 $redirect = $folder.'play?v='.$vidId.'&s='.$v.'&n='.$n;
-
 
 header("Location: $redirect");
 ?>

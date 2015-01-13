@@ -149,6 +149,13 @@ border: 3px #F7977A solid;
 background: white;
 }
 
+
+#jisc {
+    width: 60px;    
+}
+
+
+
 @media (min-width: 768px) { 
 
 h3 {font-size: 1.6em;}
