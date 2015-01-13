@@ -154,6 +154,10 @@ background: white;
     width: 60px;    
 }
 
+.love {position: relative;
+float: right;
+top: 19px;
+}
 
 
 @media (min-width: 768px) { 
