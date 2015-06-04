@@ -15,16 +15,7 @@ if (isset($n)){$next .= '&n='.$n;}
 $ip =&getIP();
 
 ?>
- 
- <?php
-$xmlInfoVideo    = simplexml_load_file("http://gdata.youtube.com/feeds/api/videos/".$v."?v=2&fields=title");
 
-foreach($xmlInfoVideo->children() as $title) { $videoTitle = strtoupper((string) $title); }
-?>
-
-
-<h3><?php echo $videoTitle;?> </h3>
-  
  
 <div class="container-fluid">
   <div class="row form">
