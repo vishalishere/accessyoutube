@@ -84,7 +84,7 @@ footer img {max-height: 50px; margin-right: 40px}
 
 
 
-a#vid {font-size:1.1em; padding-top:3px; color: #00e; display: block;}
+a.vid {font-size:1.1em; padding-top:3px; color: #00e; display: block;}
 
 .vidlink {height:130px; border:#ff9933 solid 5px; background:#fff; padd}
 .vidlinkfocus {height:130px; border:#ff9933 solid 5px; background: #FFFFcc; box-shadow: 0px 0px 0px 8px #333399 ;}
