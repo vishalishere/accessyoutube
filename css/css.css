@@ -84,7 +84,7 @@ footer img {max-height: 50px; margin-right: 40px}
 
 
 
-a#vid {font-size:1.1em; padding-top:3px; color: #00e; display: block;}
+a.vid {font-size:1.1em; padding-top:3px; color: #00e; display: block;}
 
 .vidlink {height:130px; border:#ff9933 solid 5px; background:#fff; padd}
 .vidlinkfocus {height:130px; border:#ff9933 solid 5px; background: #FFFFcc; box-shadow: 0px 0px 0px 8px #333399 ;}
@@ -98,7 +98,7 @@ a#vid {font-size:1.1em; padding-top:3px; color: #00e; display: block;}
         }
 
 
-#vid img {max-height: 120px; float:left; padding-right: 0.8em;}
+.vid img {max-height: 120px; float:left; padding-right: 0.8em;}
 p {text-align: left; padding: 5px;}
 
 
@@ -164,12 +164,12 @@ top: 19px;
 
 h3 {font-size: 1.6em;}
 
-	#vid img {max-height: 150px; margin: auto; float: none;}
+	.vid img {max-height: 150px; margin: auto; float: none;}
 	p {text-align: center; padding:0;}
 
 .form {margin-bottom: 20px;}
 
-	a#vid {font-size:16px; padding-top:3px; color: #00e;}
+	a.vid {font-size:16px; padding-top:3px; color: #00e;}
 
 	.vids {padding:0 10px;}
 
