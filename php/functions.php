@@ -69,7 +69,7 @@ echo "<div class=\" vidlink drop-shadow lifted\">";
 
 
 
-echo "<a id=\"vid".$n."\" class=\"vid\" ";
+echo "<a id=\"vid\" ";
  
 echo	"href=\"{$link}\"><img class=\"img-responsive\" src=\"{$thumb}\" alt=\"{$title}\"";
 
